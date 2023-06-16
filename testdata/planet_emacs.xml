@@ -1,0 +1,1795 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+	<title>Planet Emacslife</title>
+	<link rel="self" href="https://planet.emacslife.com/atom.xml"/>
+	<link href="https://planet.emacslife.com/"/>
+	<id>https://planet.emacslife.com/atom.xml</id>
+	<updated>2023-06-19T07:33:53+00:00</updated>
+	<generator uri="https://www.planetplanet.org/">http://intertwingly.net/code/venus/</generator>
+
+	<entry>
+		<title type="html" xml:lang="en-US">Eric MacAdie: 2023-06 Austin Emacs Meetup</title>
+		<link href="https://macadie.info/2023/06/18/2023-06-austin-emacs-meetup/"/>
+		<id>https://macadie.info/?p=6698</id>
+		<updated>2023-06-18T23:43:08+00:00</updated>
+		<published></published>
+		<content type="html">There was another meeting a couple of weeks ago of EmacsATX, the Austin Emacs Meetup group. For this month we had no predetermined topic. However, as always, there was mention of new modes, packages, technologies and websites that I had never heard of, and some of this may be of interest to you as well. ... &lt;a class=&quot;read-more&quot; href=&quot;https://macadie.info/2023/06/18/2023-06-austin-emacs-meetup/&quot; title=&quot;2023-06 Austin Emacs Meetup&quot;&gt;Read more&lt;/a&gt;</content>
+		<author>
+			<name>Eric MacAdie</name>
+			<uri>https://macadie.info</uri>
+		</author>
+		<source>
+			<title type="html">Emacs – MacAdie Web Blog</title>
+			<subtitle type="html">Understanding Concepts, Not Simply Vendor Products</subtitle>
+			<link rel="self" href="https://macadie.info/category/emacs/feed/"/>
+			<id>https://macadie.info</id>
+		</source>
+	</entry>
+
+	<entry>
+		<title type="html" xml:lang="en-US">Irreal: Org Mode Clock Checks</title>
+		<link href="https://irreal.org/blog/?p=11433"/>
+		<id>https://irreal.org/blog/?p=11433</id>
+		<updated>2023-06-18T17:46:44+00:00</updated>
+		<published></published>
+		<content type="html" xml:lang="en-US">&lt;p&gt;I’ve had this in my blog queue for sometime but before I could get to it, Sacha ran with it in her &lt;a href=&quot;https://sachachua.com/blog/2023/06/2023-06-05-emacs-news/&quot;&gt;Emacs News post&lt;/a&gt;. I was going to forego mentioning it but after my &lt;a href=&quot;https://irreal.org/blog/?p=11416&quot;&gt;Clocktables&lt;/a&gt; post, I decided that would be a useful adjunct to that post. After all, if you’re going to be using clocktables, you really should be sure that your clocking data is accurate and &lt;a href=&quot;https://mbork.pl/2023-06-03_Org_agenda_clock_check&quot;&gt;this post from Marcin Borkowski&lt;/a&gt; shows a nice way of helping to do this.&lt;/p&gt;
+&lt;p&gt;It turns out that the Org mode agenda has a builtin way of checking for anomalies in clock data. That means things like overly long clock intervals. Borkowski’s post talks about some of these cases and shows how to invoke the checks.&lt;/p&gt;
+&lt;p&gt;As Borkowski writes, you can check out the details by looking at the docstring of  &lt;code&gt;org-agenda-clock-consistency-checks&lt;/code&gt; but that function is defined with a &lt;code&gt;defcustom&lt;/code&gt; so you’ll need to search for it in &lt;code&gt;org-agenda.el&lt;/code&gt; directly.&lt;/p&gt;</content>
+		<author>
+			<name>jcs</name>
+			<uri>https://irreal.org/blog</uri>
+		</author>
+		<source>
+			<title type="html">Emacs – Irreal</title>
+			<subtitle type="html">The minds had long ago come up with a proper name for it; they called it the Irreal, but they thought of it as Infinite Fun. That was what they really knew it as. The Land of Infinite Fun. --Iain M. Banks, Excession</subtitle>
+			<link rel="self" href="http://irreal.org/blog/?tag=emacs&amp;feed=rss2"/>
+			<id>https://irreal.org/blog</id>
+		</source>
+	</entry>
+
+	<entry>
+		<title type="html">Alvaro Ramirez: noweb: the lesser known org babel glue</title>
+		<link href="http://xenodium.com/noweb-more-glue-for-your-org-toolbox"/>
+		<id>http://xenodium.com/noweb-more-glue-for-your-org-toolbox</id>
+		<updated>2023-06-18T17:23:00+00:00</updated>
+		<published></published>
+		<content type="html">&lt;div class=&quot;content&quot; id=&quot;content&quot;&gt;
+
+ &lt;div class=&quot;outline-2&quot; id=&quot;outline-container-noweb-more-glue-for-your-org-toolbox&quot;&gt;
+ &lt;h2 id=&quot;noweb-more-glue-for-your-org-toolbox&quot;&gt; &lt;span class=&quot;timestamp-wrapper&quot;&gt; &lt;span class=&quot;timestamp&quot;&gt;18 June 2023&lt;/span&gt;&lt;/span&gt; noweb: the lesser known org babel glue&lt;/h2&gt;
+ &lt;div class=&quot;outline-text-2&quot; id=&quot;text-noweb-more-glue-for-your-org-toolbox&quot;&gt;
+ &lt;p&gt;
+While  &lt;a href=&quot;https://orgmode.org/&quot;&gt;Org&lt;/a&gt; babel's  &lt;a href=&quot;https://orgmode.org/manual/Noweb-Reference-Syntax.html&quot;&gt;noweb&lt;/a&gt; isn't something I've frequently used for literate programming, its simplicity makes it rather versatile to glue all sorts of babel things I hadn't previously considered.
+&lt;/p&gt;
+
+ &lt;p&gt;
+The idea is simple. Add a placeholder like  &lt;code&gt;&lt;code&gt;&lt;/code&gt; to an  &lt;a href=&quot;https://orgmode.org/manual/Working-with-Source-Code.html&quot;&gt;org babel&lt;/a&gt; source block, and it will be automatically replaced (verbatim) with the content (or result) of referred block before execution. You'll also need the  &lt;code&gt;:noweb yes&lt;/code&gt; header argument.
+&lt;/code&gt;&lt;/p&gt;&lt;code&gt;
+
+ &lt;div class=&quot;org-src-container&quot;&gt;
+ &lt;pre class=&quot;src src-org&quot;&gt;#+NAME: other-block
+#+begin_src swift
+  print(&quot;Hello 0&quot;)
+#+end_src
+
+#+RESULTS: other-block
+: Hello 0
+
+#+BEGIN_SRC swift :noweb yes
+  &lt;pre&gt;  print(&quot;Hello 1&quot;)
+#+END_SRC
+
+#+RESULTS:
+: Hello 0
+: Hello 1
+&lt;/pre&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+ &lt;p&gt;
+Since  &lt;code&gt;&lt;code&gt;&lt;/code&gt; is replaced with the content of said block, at execution time, the block is effectively equivalent to executing:
+&lt;/code&gt;&lt;/p&gt;&lt;code&gt;
+
+ &lt;div class=&quot;org-src-container&quot;&gt;
+ &lt;pre class=&quot;src src-swift&quot;&gt; &lt;span style=&quot;color: #a71d5d;&quot;&gt;print&lt;/span&gt;(&lt;span style=&quot;color: #183691;&quot;&gt;&quot;Hello 0&quot;&lt;/span&gt;)
+ &lt;span style=&quot;color: #a71d5d;&quot;&gt;print&lt;/span&gt;(&lt;span style=&quot;color: #183691;&quot;&gt;&quot;Hello 1&quot;&lt;/span&gt;)
+&lt;/pre&gt;
+&lt;/div&gt;
+
+ &lt;pre class=&quot;example&quot;&gt;Hello 0
+Hello 1
+&lt;/pre&gt;
+
+
+ &lt;p&gt;
+Why is this so versatile? Org babel can include/execute all sorts of languages, so you can mix and match the result from one language and massage it to appear as the body of another block using the same (or different) language.
+&lt;/p&gt;
+
+ &lt;p&gt;
+I was recently asked  &lt;a href=&quot;https://github.com/xenodium/chatgpt-shell/issues/102&quot;&gt;how to include the result from one babel block in another&lt;/a&gt; using  &lt;a href=&quot;https://github.com/xenodium/chatgpt-shell/#chatgpt-org-babel&quot;&gt;ob-chatgpt-shell&lt;/a&gt;. While the initial question was looking for a solution involving variables, we can use noweb to achieve a similar goal.
+&lt;/p&gt;
+
+ &lt;p&gt;
+Note that in this case, I'll be using  &lt;code&gt;&lt;code&gt;&lt;/code&gt;, with  &lt;code&gt;()&lt;/code&gt;, to refer to  &lt;code&gt;#+RESULTS:&lt;/code&gt; rather than the source block itself.
+&lt;/code&gt;&lt;/p&gt;&lt;code&gt;
+
+ &lt;div class=&quot;org-src-container&quot;&gt;
+ &lt;pre class=&quot;src src-org&quot;&gt;#+NAME: hello
+#+BEGIN_SRC chatgpt-shell
+Say hello in spanish
+#+END_SRC
+
+#+RESULTS: hello
+Hola
+
+#+BEGIN_SRC chatgpt-shell :noweb yes
+&lt;pre&gt;What does the previous line say verbatim?
+#+END_SRC
+&lt;/pre&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+ &lt;p&gt;
+Executing the block
+&lt;/p&gt;
+
+ &lt;div class=&quot;org-src-container&quot;&gt;
+ &lt;pre class=&quot;src src-chatgpt-shell&quot;&gt;&lt;pre&gt;What does the previous line say verbatim?
+&lt;/pre&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+ &lt;p&gt;
+Gives us
+&lt;/p&gt;
+
+ &lt;pre class=&quot;example&quot;&gt;The previous line says &quot;Hola&quot;.
+&lt;/pre&gt;
+
+
+ &lt;p&gt;
+On a similar note, I was asked if the results from a previous source block could be  &lt;a href=&quot;https://indieweb.social/@kickingvegas@sfba.social/110562099134297469&quot;&gt;fed to a Swift Chart block&lt;/a&gt; using  &lt;a href=&quot;https://github.com/xenodium/ob-swiftui&quot;&gt;ob-swiftui&lt;/a&gt;.
+&lt;/p&gt;
+
+ &lt;p&gt;
+While I'm new to  &lt;a href=&quot;https://developer.apple.com/documentation/Charts&quot;&gt;Swift Charts&lt;/a&gt;, I do love glueing things via Emacs lisp. I figured I could write a little elisp to generate random data and feed it to a SwiftUI block via  &lt;code&gt;&lt;code&gt;&lt;/code&gt;. The result is pretty neat, based on Apple's  &lt;a href=&quot;https://developer.apple.com/documentation/charts/linemark&quot;&gt;LineMark example&lt;/a&gt;.
+&lt;/code&gt;&lt;/p&gt;&lt;code&gt;
+
+
+ &lt;div class=&quot;figure&quot; id=&quot;org71f1814&quot;&gt;
+ &lt;p&gt; &lt;img alt=&quot;data-chart.gif&quot; src=&quot;https://xenodium.com/images/noweb-more-glue-for-your-org-toolbox/data-chart.gif&quot; width=&quot;95%&quot; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+ &lt;div class=&quot;org-src-container&quot;&gt;
+ &lt;pre class=&quot;src src-org&quot;&gt;#+NAME: data
+#+begin_src emacs-lisp :lexical no
+  (concat (mapconcat (lambda (n)
+                       (format &quot;MonthlyHoursOfSunshine(city: \&quot;Seattle\&quot;, month: %d, hoursOfSunshine: %d),&quot;
+                               n (random 100)))
+                     (number-sequence 1 20) &quot;\n&quot;)
+          &quot;\n&quot;
+          (mapconcat (lambda (n)
+                       (format &quot;MonthlyHoursOfSunshine(city: \&quot;Cupertino\&quot;, month: %d, hoursOfSunshine: %d),&quot;
+                               n (random 100)))
+                     (number-sequence 1 20) &quot;\n&quot;))
+#+end_src
+
+#+begin_src swiftui :results file :noweb yes
+  import Charts
+
+  struct MonthlyHoursOfSunshine: Identifiable {
+    var city: String
+    var date: Date
+    var hoursOfSunshine: Double
+    var id = UUID()
+
+    init(city: String, month: Int, hoursOfSunshine: Double) {
+      let calendar = Calendar.autoupdatingCurrent
+      self.city = city
+      self.date = calendar.date(from: DateComponents(year: 2020, month: month))!
+      self.hoursOfSunshine = hoursOfSunshine
+    }
+  }
+
+  struct ContentView: View {
+    var data: [MonthlyHoursOfSunshine] = [
+&lt;pre&gt;    ]
+    var body: some View {
+      Chart(data) {
+        LineMark(
+          x: .value(&quot;Month&quot;, $0.date),
+          y: .value(&quot;Hours of Sunshine&quot;, $0.hoursOfSunshine)
+        )
+        .foregroundStyle(by: .value(&quot;City&quot;, $0.city))
+      }
+      .frame(minWidth: 800, minHeight: 300)
+      .padding()
+      .colorScheme(.dark)
+    }
+  }
+#+end_src
+&lt;/pre&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+ &lt;p&gt;
+While I've shown fairly basic usages of noweb, we can accomplish some nifty integrations. Check out the  &lt;a href=&quot;https://orgmode.org/manual/Noweb-Reference-Syntax.html&quot;&gt;noweb reference syntax&lt;/a&gt; for more examples and additional header arguments like  &lt;code&gt;tangle&lt;/code&gt;,  &lt;code&gt;strip-tangle&lt;/code&gt;, and others.
+&lt;/p&gt;
+&lt;/code&gt;&lt;/code&gt;&lt;/code&gt;&lt;/code&gt;&lt;/div&gt;&lt;code&gt;&lt;code&gt;&lt;code&gt;&lt;code&gt;
+&lt;/code&gt;&lt;/code&gt;&lt;/code&gt;&lt;/code&gt;&lt;/div&gt;&lt;code&gt;&lt;code&gt;&lt;code&gt;&lt;code&gt;
+&lt;/code&gt;&lt;/code&gt;&lt;/code&gt;&lt;/code&gt;&lt;/div&gt;</content>
+		<author>
+			<name>Alvaro Ramirez</name>
+			<uri>http://xenodium.com</uri>
+		</author>
+		<source>
+			<title type="html">Alvaro Ramirez's Emacs notes</title>
+			<subtitle type="html">Alvaro's Emacs notes from a hacked up org HTML export.</subtitle>
+			<link rel="self" href="https://xenodium.com/emacs/rss.xml"/>
+			<id>http://xenodium.com</id>
+		</source>
+	</entry>
+
+	<entry>
+		<title type="html">Protesilaos Stavrou: Emacs: introduction to the ef-themes “Elea” variants</title>
+		<link href="https://protesilaos.com/codelog/2023-06-18-ef-elea-dark-light/"/>
+		<id>https://protesilaos.com/codelog/2023-06-18-ef-elea-dark-light/</id>
+		<updated>2023-06-18T00:00:00+00:00</updated>
+		<published></published>
+		<content type="html">&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ef-elea-light&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ef-elea-dark&lt;/code&gt; themes are now part of the
+development version of the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ef-themes&lt;/code&gt; package.  Both are special
+among the Ef themes in that they use more pronounced background
+colours combined with subdued foregrounds.&lt;/p&gt;
+
+&lt;p&gt;The new themes take their name from the Greek word for “olive”.  Their
+effective colours are based on those of olive trees: a common sight
+across the Mediterranean region.&lt;/p&gt;
+
+&lt;p&gt;Sample pictures are shown below.  Also check the entire set:
+&lt;a href=&quot;https://protesilaos.com/emacs/ef-themes-pictures&quot;&gt;https://protesilaos.com/emacs/ef-themes-pictures&lt;/a&gt;.  &lt;strong&gt;Click to
+enlarge the image&lt;/strong&gt; for best results.&lt;/p&gt;
+
+&lt;h3&gt;ef-elea-light&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://protesilaos.com/assets/images/ef/ef-elea-light.png&quot;&gt;&lt;img alt=&quot;ef-elea-light theme sample&quot; src=&quot;https://protesilaos.com/assets/images/ef/ef-elea-light.png&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://protesilaos.com/assets/images/ef/ef-elea-light-git.png&quot;&gt;&lt;img alt=&quot;ef-elea-light theme git sample&quot; src=&quot;https://protesilaos.com/assets/images/ef/ef-elea-light-git.png&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://protesilaos.com/assets/images/ef/ef-elea-light-mail.png&quot;&gt;&lt;img alt=&quot;ef-elea-light theme mail sample&quot; src=&quot;https://protesilaos.com/assets/images/ef/ef-elea-light-mail.png&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://protesilaos.com/assets/images/ef/ef-elea-light-org.png&quot;&gt;&lt;img alt=&quot;ef-elea-light theme org sample&quot; src=&quot;https://protesilaos.com/assets/images/ef/ef-elea-light-org.png&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;ef-elea-dark&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://protesilaos.com/assets/images/ef/ef-elea-dark.png&quot;&gt;&lt;img alt=&quot;ef-elea-dark theme sample&quot; src=&quot;https://protesilaos.com/assets/images/ef/ef-elea-dark.png&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://protesilaos.com/assets/images/ef/ef-elea-dark-git.png&quot;&gt;&lt;img alt=&quot;ef-elea-dark theme git sample&quot; src=&quot;https://protesilaos.com/assets/images/ef/ef-elea-dark-git.png&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://protesilaos.com/assets/images/ef/ef-elea-dark-mail.png&quot;&gt;&lt;img alt=&quot;ef-elea-dark theme mail sample&quot; src=&quot;https://protesilaos.com/assets/images/ef/ef-elea-dark-mail.png&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://protesilaos.com/assets/images/ef/ef-elea-dark-org.png&quot;&gt;&lt;img alt=&quot;ef-elea-dark theme org sample&quot; src=&quot;https://protesilaos.com/assets/images/ef/ef-elea-dark-org.png&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Coming in version 1.2.0 (next stable release)&lt;/h2&gt;
+
+&lt;p&gt;Both themes are essentially complete.  I may still tweak them a
+little bit, though nothing that would refashion them.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ef-themes&lt;/code&gt; are a collection of light and dark themes for GNU Emacs
+whose goal is to provide colorful (“pretty”) yet legible options for
+users who want something with a bit more flair than the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;modus-themes&lt;/code&gt;
+(also designed by me).&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Package name (GNU ELPA): &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ef-themes&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Official manual: &lt;a href=&quot;https://protesilaos.com/emacs/ef-themes&quot;&gt;https://protesilaos.com/emacs/ef-themes&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Change log: &lt;a href=&quot;https://protesilaos.com/emacs/ef-themes-changelog&quot;&gt;https://protesilaos.com/emacs/ef-themes-changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Sample pictures: &lt;a href=&quot;https://protesilaos.com/emacs/ef-themes-pictures&quot;&gt;https://protesilaos.com/emacs/ef-themes-pictures&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Git repo on SourceHut: &lt;a href=&quot;https://git.sr.ht/~protesilaos/ef-themes&quot;&gt;https://git.sr.ht/~protesilaos/ef-themes&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Mirrors:
+        &lt;ul&gt;
+          &lt;li&gt;GitHub: &lt;a href=&quot;https://github.com/protesilaos/ef-themes&quot;&gt;https://github.com/protesilaos/ef-themes&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;GitLab: &lt;a href=&quot;https://gitlab.com/protesilaos/ef-themes&quot;&gt;https://gitlab.com/protesilaos/ef-themes&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Mailing list: &lt;a href=&quot;https://lists.sr.ht/~protesilaos/ef-themes&quot;&gt;https://lists.sr.ht/~protesilaos/ef-themes&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Backronym: Eclectic Fashion in Themes Hides Exaggerated Markings,
+Embellishments, and Sparkles.&lt;/li&gt;
+&lt;/ul&gt;</content>
+		<author>
+			<name>Protesilaos Stavrou</name>
+			<uri>https://protesilaos.com/codelog</uri>
+		</author>
+		<source>
+			<title type="html">Protesilaos Stavrou: Coding blog</title>
+			<subtitle type="html">Coding blog</subtitle>
+			<link rel="self" href="https://protesilaos.com/codelog.xml"/>
+			<id>https://protesilaos.com/codelog</id>
+		</source>
+	</entry>
+
+	<entry>
+		<title type="html" xml:lang="en">James Dyer: Revert Git Permission Changes On Repository Transfer</title>
+		<link href="https://www.emacs.dyerdwelling.family/emacs/20230617200412-emacs--revert-git-permission-changes-on-transfer/"/>
+		<id>https://www.emacs.dyerdwelling.family/emacs/20230617200412-emacs--revert-git-permission-changes-on-transfer/</id>
+		<updated>2023-06-17T19:30:00+00:00</updated>
+		<published></published>
+		<content type="html">&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-sm-12 col-md-12 col-lg-6 col-xl-6 pb-6&quot;&gt;
+    &lt;p&gt;I recently reinstalled my laptop and copied across my git repositories from an external backup drive.  However most of my repositories were flagged by &lt;code&gt;magit&lt;/code&gt; as having been &lt;em&gt;updated&lt;/em&gt; mainly with the following issue on multiple files:&lt;/p&gt;
+&lt;pre tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-nil&quot;&gt;old mode 100644
+new mode 100755
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I found a fix for a single repository on &lt;code&gt;stackoverflow&lt;/code&gt; but I have quite a few repositories now, so I wrote the following bash script borrowing the core git diff command fix and then ran it in &lt;code&gt;eshell&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span style=&quot;display: flex;&quot;&gt;&lt;span&gt;&lt;span style=&quot;color: #75715e;&quot;&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;display: flex;&quot;&gt;&lt;span&gt;&lt;span style=&quot;color: #75715e;&quot;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;display: flex;&quot;&gt;&lt;span&gt;LIST&lt;span style=&quot;color: #f92672;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #e6db74;&quot;&gt;&quot;DCIM/Art/Content/ArtAssets
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;display: flex;&quot;&gt;&lt;span&gt;&lt;span style=&quot;color: #e6db74;&quot;&gt;DCIM/Art/Content/ArtRage
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;display: flex;&quot;&gt;&lt;span&gt;&lt;span style=&quot;color: #e6db74;&quot;&gt;DCIM/Art/Content/ArtRagePenTool
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;display: flex;&quot;&gt;&lt;span&gt;&lt;span style=&quot;color: #e6db74;&quot;&gt;DCIM/Art/Content/ArtRageTabletFriend
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;display: flex;&quot;&gt;&lt;span&gt;&lt;span style=&quot;color: #e6db74;&quot;&gt;DCIM/Art/Content/InfinitePainter
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;display: flex;&quot;&gt;&lt;span&gt;&lt;span style=&quot;color: #e6db74;&quot;&gt;DCIM/Art/Content/Krita
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;display: flex;&quot;&gt;&lt;span&gt;&lt;span style=&quot;color: #e6db74;&quot;&gt;DCIM/content
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;display: flex;&quot;&gt;&lt;span&gt;&lt;span style=&quot;color: #e6db74;&quot;&gt;bin
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;display: flex;&quot;&gt;&lt;span&gt;&lt;span style=&quot;color: #e6db74;&quot;&gt;publish&quot;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;display: flex;&quot;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;display: flex;&quot;&gt;&lt;span&gt;&lt;span style=&quot;color: #66d9ef;&quot;&gt;for&lt;/span&gt; item in $LIST; &lt;span style=&quot;color: #66d9ef;&quot;&gt;do&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;display: flex;&quot;&gt;&lt;span&gt;   echo $item
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;display: flex;&quot;&gt;&lt;span&gt;   cd ~/$item
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;display: flex;&quot;&gt;&lt;span&gt;   git diff -p -R --no-ext-diff --no-color &lt;span style=&quot;color: #ae81ff;&quot;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;display: flex;&quot;&gt;&lt;span&gt;&lt;span style=&quot;color: #ae81ff;&quot;&gt;&lt;/span&gt;      | grep -E &lt;span style=&quot;color: #e6db74;&quot;&gt;&quot;^(diff|(old|new) mode)&quot;&lt;/span&gt; --color&lt;span style=&quot;color: #f92672;&quot;&gt;=&lt;/span&gt;never &lt;span style=&quot;color: #ae81ff;&quot;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;display: flex;&quot;&gt;&lt;span&gt;&lt;span style=&quot;color: #ae81ff;&quot;&gt;&lt;/span&gt;      | git apply
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;display: flex;&quot;&gt;&lt;span&gt;&lt;span style=&quot;color: #66d9ef;&quot;&gt;done&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This is where the integrated nature of emacs can come in useful, although the &lt;code&gt;stackoverflow&lt;/code&gt; example was the git diff line I wanted to perform this for each of my repositories and to achieve this I just simply grabbed the Path column output of &lt;code&gt;magit-list-repositories&lt;/code&gt; using &lt;code&gt;rectangle-mark-mode&lt;/code&gt; and trimmed down using some macros so I could iterate through each repository directory and run the command each time to clean up.&lt;/p&gt;
+&lt;figure&gt;&lt;img src=&quot;https://www.emacs.dyerdwelling.family/ox-hugo/20230617200412-emacs--Revert-Git-Permission-Changes-On-Transfer.jpg&quot; width=&quot;300px&quot; /&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+  &lt;div class=&quot;col-sm-12 col-md-12 col-lg-6 col-xl-6 pb-6&quot;&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</content>
+		<author>
+			<name>James Dyer</name>
+			<uri>https://www.emacs.dyerdwelling.family/tags/emacs/</uri>
+		</author>
+		<source>
+			<title type="html">emacs on the DyerDwelling / emacs</title>
+			<subtitle type="html">Recent content in emacs on the DyerDwelling / emacs</subtitle>
+			<link rel="self" href="https://www.emacs.dyerdwelling.family/tags/emacs/index.xml"/>
+			<id>https://www.emacs.dyerdwelling.family/tags/emacs/</id>
+			<rights type="html">© 2023 James Dyer all rights reserved</rights>
+		</source>
+	</entry>
+
+	<entry>
+		<title type="html" xml:lang="en-US">Irreal: Setting Up emacs</title>
+		<link href="https://irreal.org/blog/?p=11431"/>
+		<id>https://irreal.org/blog/?p=11431</id>
+		<updated>2023-06-17T17:41:08+00:00</updated>
+		<published></published>
+		<content type="html" xml:lang="en-US">&lt;p&gt;Will Schenk has a post that may interest some of you. It’s about &lt;a href=&quot;https://willschenk.com/howto/2023/setting_up_emacs_reredux/&quot;&gt;setting up a new Emacs instance&lt;/a&gt;. It’s not that he’s a n00b; he just wants to set up a nice clean instance. You can argue with his choice of themes and the packages that he chooses but the post is handy nonetheless.&lt;/p&gt;
+&lt;p&gt;He starts with installing &lt;code&gt;emacs-plus&lt;/code&gt; from &lt;a href=&quot;https://brew.sh/&quot;&gt;Homebrew&lt;/a&gt; along with the &lt;a href=&quot;https://fonts.google.com/specimen/Roboto&quot;&gt;Roboto fonts&lt;/a&gt;. Then he disables &lt;code&gt;package.el&lt;/code&gt; in favor of &lt;a href=&quot;https://github.com/radian-software/straight.el&quot;&gt;straight.el&lt;/a&gt;. Lots of folks have abandoned the default &lt;code&gt;package.el&lt;/code&gt; in favor of &lt;code&gt;straight.el&lt;/code&gt; or one of the other alternatives but I’ve never felt the need. The default system works well for me and I don’t need the pain of worrying about another package to wrangle my packages. Still, &lt;code&gt;straight.el&lt;/code&gt; appears to be a good choice if you &lt;i&gt;do&lt;/i&gt; feel the need for another package manager.&lt;/p&gt;
+&lt;p&gt;Next, he installs Org and &lt;a href=&quot;https://github.com/abo-abo/swiper&quot;&gt;counsel&lt;/a&gt;. Those are pretty much mandatory and I definitely agree with those choices. The last major decision is to install the &lt;a href=&quot;https://github.com/rougier/nano-theme&quot;&gt;Nano theme&lt;/a&gt;. I don’t use any theme, preferring to simply set my background to a light tan (oldlace) and otherwise use the Emacs defaults. I’ve been doing that for years and have never felt the need to change. But lots of people love Nano so if you’re looking for theme, you should take a look at it.&lt;/p&gt;
+&lt;p&gt;Schenk installs some other packages so be sure to take a look at his post to see what he’s decided on.&lt;/p&gt;</content>
+		<author>
+			<name>jcs</name>
+			<uri>https://irreal.org/blog</uri>
+		</author>
+		<source>
+			<title type="html">Emacs – Irreal</title>
+			<subtitle type="html">The minds had long ago come up with a proper name for it; they called it the Irreal, but they thought of it as Infinite Fun. That was what they really knew it as. The Land of Infinite Fun. --Iain M. Banks, Excession</subtitle>
+			<link rel="self" href="http://irreal.org/blog/?tag=emacs&amp;feed=rss2"/>
+			<id>https://irreal.org/blog</id>
+		</source>
+	</entry>
+
+	<entry>
+		<title type="html">Manuel Uberti: Tweaking Consult completion</title>
+		<link href="https://manueluberti.eu//2023/06/17/consult-completion.html"/>
+		<id>https://manueluberti.eu//2023/06/17/consult-completion.html</id>
+		<updated>2023-06-17T00:00:00+00:00</updated>
+		<published></published>
+		<content type="html">&lt;p&gt;After having adapted &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;vertico--format-candidate&lt;/code&gt; to behave like I want in my
+Marginalia-less setup,&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a class=&quot;footnote&quot; href=&quot;https://manueluberti.eu/feed.xml#fn:1&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; I noticed I still had undesired documentation during
+completion.&lt;/p&gt;
+
+&lt;p&gt;Now, Daniel Mendler created the beautiful Corfu to improve completion at point
+in Emacs. However, he did not forget about old school users such as myself and
+provided &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;consult-completion-in-region&lt;/code&gt; for the minibuffer lovers out there.&lt;/p&gt;
+
+&lt;p&gt;My only “problem”&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a class=&quot;footnote&quot; href=&quot;https://manueluberti.eu/feed.xml#fn:2&quot; rel=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;consult-completion-in-region&lt;/code&gt; if that by default
+candidates are offered with some related documentation next to them, much like
+what one would see with &lt;kbd&gt;M-x&lt;/kbd&gt; were one to use Marginalia. It is
+possible to leverage &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;consult-customize&lt;/code&gt; to change a subset of
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;consult-completion-in-region&lt;/code&gt; details,&lt;sup id=&quot;fnref:3&quot;&gt;&lt;a class=&quot;footnote&quot; href=&quot;https://manueluberti.eu/feed.xml#fn:3&quot; rel=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt; but to remove the extra information
+something else is needed.&lt;/p&gt;
+
+&lt;div class=&quot;language-emacs-lisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;define-advice&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;consult-completion-in-region&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:around&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;&amp;amp;rest&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;mu-completion-no-extra-properties&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;&quot;Remove extra properties from completion candidates.&quot;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;cl-letf&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(((&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;default-value&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;'completion-extra-properties&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;apply&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;A hack, yes, but also another way to prove the level of freedom Emacs empowers
+the user with.&lt;/p&gt;
+
+&lt;p&gt;Note that my small modifications to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;vertico--format-candidate&lt;/code&gt; and
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;consult-completion-in-region&lt;/code&gt; are not intended to highlight any Vertico or
+Consult shortcomings. These are great packages that improve the standard Emacs
+experience, thus they should be tried as they come out of the box for a while.
+The fact that I can easily adjust them to my preferences just make them shine
+even more.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;See: &lt;a href=&quot;https://manueluberti.eu/2023/04/16/vertico-current.html&quot;&gt;Tweaking Vertico
+candidates&lt;/a&gt;. &lt;a class=&quot;reversefootnote&quot; href=&quot;https://manueluberti.eu/feed.xml#fnref:1&quot;&gt;↩&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot;&gt;
+      &lt;p&gt;The quotes should be enough to suggest that this is not a real problem,
+but let me spell it out to avoid confusion. &lt;a class=&quot;reversefootnote&quot; href=&quot;https://manueluberti.eu/feed.xml#fnref:2&quot;&gt;↩&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:3&quot;&gt;
+      &lt;p&gt;Try &lt;kbd&gt;C-h f consult-completion-in-region RET&lt;/kbd&gt; to know more. &lt;a class=&quot;reversefootnote&quot; href=&quot;https://manueluberti.eu/feed.xml#fnref:3&quot;&gt;↩&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content>
+		<author>
+			<name>Manuel Uberti</name>
+			<uri>https://manueluberti.eu</uri>
+		</author>
+		<source>
+			<title type="html">Manuel Uberti</title>
+			<subtitle type="html">My personal website</subtitle>
+			<link rel="self" href="https://manueluberti.eu/feed.xml"/>
+			<id>https://manueluberti.eu</id>
+		</source>
+	</entry>
+
+	<entry>
+		<title type="html">Discovering Emacs podcast: Efficiency With The Mark Ring in Emacs - EP2</title>
+		<link href="https://www.youtube.com/watch?v=uhyr8kvKa2I"/>
+		<id>yt:video:uhyr8kvKa2I</id>
+		<updated>2023-06-16T17:30:54+00:00</updated>
+		<published>2023-02-23T08:12:43+00:00</published>
+		<content type="html"></content>
+		<author>
+			<name>Discovering Emacs</name>
+			<uri>https://www.youtube.com/channel/UC8gfEh6Z9yLmw5o7fC7D9QA</uri>
+		</author>
+		<source>
+			<title type="html">Discovering Emacs</title>
+			<link rel="self" href="http://www.youtube.com/feeds/videos.xml?channel_id=UC8gfEh6Z9yLmw5o7fC7D9QA"/>
+			<id>yt:channel:</id>
+		</source>
+	</entry>
+
+	<entry>
+		<title type="html" xml:lang="en-US">Irreal: Red Meat Friday: A Conversation With An Emacs User</title>
+		<link href="https://irreal.org/blog/?p=11429"/>
+		<id>https://irreal.org/blog/?p=11429</id>
+		<updated>2023-06-16T17:21:46+00:00</updated>
+		<published></published>
+		<content type="html" xml:lang="en-US">&lt;p&gt;A conversation with a typical Emacs user:&lt;/p&gt;
+&lt;blockquote class=&quot;reddit-embed-bq&quot; style=&quot;height: 500px;&quot;&gt;&lt;p&gt;      &lt;a href=&quot;https://www.reddit.com/r/emacs/comments/1460otc/interview_with_an_emacs_enthusiast_in_2033/&quot;&gt;Interview with an Emacs Enthusiast in 2033 [Colorized]&lt;/a&gt;&lt;br /&gt;
+by      &lt;a href=&quot;https://www.reddit.com/user/miversen33&quot;&gt;u/miversen33&lt;/a&gt; in      &lt;a href=&quot;https://www.reddit.com/r/emacs/&quot;&gt;emacs&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;What makes this so funny is that every outrageous statement the protagonist makes is something that we’d agree with. Sort of.&lt;/p&gt;
+&lt;p&gt;So this one is for all you Vim users and other heathen.&lt;/p&gt;</content>
+		<author>
+			<name>jcs</name>
+			<uri>https://irreal.org/blog</uri>
+		</author>
+		<source>
+			<title type="html">Emacs – Irreal</title>
+			<subtitle type="html">The minds had long ago come up with a proper name for it; they called it the Irreal, but they thought of it as Infinite Fun. That was what they really knew it as. The Land of Infinite Fun. --Iain M. Banks, Excession</subtitle>
+			<link rel="self" href="http://irreal.org/blog/?tag=emacs&amp;feed=rss2"/>
+			<id>https://irreal.org/blog</id>
+		</source>
+	</entry>
+
+	<entry>
+		<title type="html">Discovering Emacs podcast: Making Incremental Search Work for You in Emacs - EP3</title>
+		<link href="https://www.youtube.com/watch?v=9CdbfZXsrqg"/>
+		<id>yt:video:9CdbfZXsrqg</id>
+		<updated>2023-06-15T15:52:13+00:00</updated>
+		<published>2023-03-02T06:01:43+00:00</published>
+		<content type="html"></content>
+		<author>
+			<name>Discovering Emacs</name>
+			<uri>https://www.youtube.com/channel/UC8gfEh6Z9yLmw5o7fC7D9QA</uri>
+		</author>
+		<source>
+			<title type="html">Discovering Emacs</title>
+			<link rel="self" href="http://www.youtube.com/feeds/videos.xml?channel_id=UC8gfEh6Z9yLmw5o7fC7D9QA"/>
+			<id>yt:channel:</id>
+		</source>
+	</entry>
+
+	<entry>
+		<title type="html">Discovering Emacs podcast: Using Whitespace Mode in Emacs - EP4</title>
+		<link href="https://www.youtube.com/watch?v=uViGjSqrLDw"/>
+		<id>yt:video:uViGjSqrLDw</id>
+		<updated>2023-06-15T08:54:23+00:00</updated>
+		<published>2023-03-15T09:28:41+00:00</published>
+		<content type="html"></content>
+		<author>
+			<name>Discovering Emacs</name>
+			<uri>https://www.youtube.com/channel/UC8gfEh6Z9yLmw5o7fC7D9QA</uri>
+		</author>
+		<source>
+			<title type="html">Discovering Emacs</title>
+			<link rel="self" href="http://www.youtube.com/feeds/videos.xml?channel_id=UC8gfEh6Z9yLmw5o7fC7D9QA"/>
+			<id>yt:channel:</id>
+		</source>
+	</entry>
+
+	<entry>
+		<title type="html" xml:lang="en-US">Irreal: Define-keymap</title>
+		<link href="https://irreal.org/blog/?p=11425"/>
+		<id>https://irreal.org/blog/?p=11425</id>
+		<updated>2023-06-14T17:48:56+00:00</updated>
+		<published></published>
+		<content type="html" xml:lang="en-US">&lt;p&gt;Zachary Kanfer has a useful post for those of you who want to reduce to a bare minimum the amount of code you have to write to configure Emacs. Kanfer was bothered by all the boilerplate you have to enter to make a keymap so he decided to write a couple of functions that simplified the process. While getting ready to publish his code, &lt;a href=&quot;https://zck.org/define-keymap&quot;&gt;he discovered define-keymap&lt;/a&gt;. It is, strictly speaking, an Emacs 29 functionality but Emacs 28 has the &lt;code&gt;compat-29.el&lt;/code&gt; module that backports &lt;code&gt;define-keymap&lt;/code&gt; and other functionality to older Emacs versions. The nice thing about it is that it removes all the complexity and boiler plate involved in making a key map. Basically all you do is list the bindings (as text strings) and the corresponding functions. It could hardly be easier.&lt;/p&gt;
+&lt;p&gt;Personally, I’ve never found the old way of defining keymaps that onerous—although it can be hard to remember the exact spell if you aren’t doing it all the time—so I’m not going to jump into using &lt;code&gt;define-keymap&lt;/code&gt; but I could see myself using it if I needed a quick keymap and didn’t want to look up the &lt;code&gt;make-keymap&lt;/code&gt; incantation.&lt;/p&gt;
+&lt;p&gt;If you’re on Emacs 29, Emacs 28, or possibly older versions, invoke &lt;code&gt;describe-function&lt;/code&gt; on &lt;code&gt;define-keymap&lt;/code&gt; to see all the details. If you’re into simplifying your &lt;code&gt;init.el&lt;/code&gt;, take a look at Kanfer’s post to see one way of doing that.&lt;/p&gt;</content>
+		<author>
+			<name>jcs</name>
+			<uri>https://irreal.org/blog</uri>
+		</author>
+		<source>
+			<title type="html">Emacs – Irreal</title>
+			<subtitle type="html">The minds had long ago come up with a proper name for it; they called it the Irreal, but they thought of it as Infinite Fun. That was what they really knew it as. The Land of Infinite Fun. --Iain M. Banks, Excession</subtitle>
+			<link rel="self" href="http://irreal.org/blog/?tag=emacs&amp;feed=rss2"/>
+			<id>https://irreal.org/blog</id>
+		</source>
+	</entry>
+
+	<entry>
+		<title type="html" xml:lang="en-US">Irreal: Prot Video on Org Mode</title>
+		<link href="https://irreal.org/blog/?p=11422"/>
+		<id>https://irreal.org/blog/?p=11422</id>
+		<updated>2023-06-13T17:28:02+00:00</updated>
+		<published></published>
+		<content type="html" xml:lang="en-US">&lt;p&gt;After watching and writing about Protesilaos Stavrou’s &lt;a href=&quot;https://irreal.org/blog/?p=11418&quot;&gt;video on searching and replacing in Emacs&lt;/a&gt;, I went back and watched his previous video on &lt;a href=&quot;https://www.youtube.com/watch?v=e9Ucb1JHUfQ&quot;&gt;Org mode basics&lt;/a&gt;. Although I’m late to the party with this post, the video is interesting enough that I felt it was worth writing about.&lt;/p&gt;
+&lt;p&gt;Although Prot mostly restricts himself to Org mode markup, he does his usual comprehensive coverage of the material. He starts with explaining the emphasis markers (&lt;b&gt;bold&lt;/b&gt;, &lt;i&gt;italics&lt;/i&gt;, etc.) and gives an excellent explanation of the difference between &lt;code&gt;verbatum&lt;/code&gt; and &lt;code&gt;code&lt;/code&gt;. Although these both render the same in every export format I know of, it’s perfectly reasonable that some new exporter could render them differently.&lt;/p&gt;
+&lt;p&gt;Most of the rest of the video considers optimal ways of entering text in an Org buffer. He starts with headings and shows how to add additional headers at the same or lower levels, mark them as TODO items, and how to promote and demote a heading’s level. One of the most interesting things that I learned about was &lt;code&gt;org-indent-mode&lt;/code&gt;. It provides a virtual display of an Org buffer in which headings, subheadings, lists, sublists, and other constructs are indented according to their level. The underlying file is unchanged so the exporters don’t get confused by manually added indentation. Although Prot doesn’t mention it, you can make the mode persist by adding &lt;code&gt;indent&lt;/code&gt; to the &lt;code&gt;#+STARTUP&lt;/code&gt; keyword in the header.&lt;/p&gt;
+&lt;p&gt;As with all of Prot’s videos, this one is well worth your time. You’ll probably learn a thing or two even if you’re already familiar with Org markup. The video is 48 and a half minutes so you’ll need to schedule some time but it’s worth it.&lt;/p&gt;</content>
+		<author>
+			<name>jcs</name>
+			<uri>https://irreal.org/blog</uri>
+		</author>
+		<source>
+			<title type="html">Emacs – Irreal</title>
+			<subtitle type="html">The minds had long ago come up with a proper name for it; they called it the Irreal, but they thought of it as Infinite Fun. That was what they really knew it as. The Land of Infinite Fun. --Iain M. Banks, Excession</subtitle>
+			<link rel="self" href="http://irreal.org/blog/?tag=emacs&amp;feed=rss2"/>
+			<id>https://irreal.org/blog</id>
+		</source>
+	</entry>
+
+	<entry>
+		<title type="html">Discovering Emacs podcast: Finding Files Recursively Using Locate in Emacs - EP1</title>
+		<link href="https://www.youtube.com/watch?v=Qz8O9XWKFwM"/>
+		<id>yt:video:Qz8O9XWKFwM</id>
+		<updated>2023-06-13T15:46:51+00:00</updated>
+		<published>2023-02-20T15:12:32+00:00</published>
+		<content type="html"></content>
+		<author>
+			<name>Discovering Emacs</name>
+			<uri>https://www.youtube.com/channel/UC8gfEh6Z9yLmw5o7fC7D9QA</uri>
+		</author>
+		<source>
+			<title type="html">Discovering Emacs</title>
+			<link rel="self" href="http://www.youtube.com/feeds/videos.xml?channel_id=UC8gfEh6Z9yLmw5o7fC7D9QA"/>
+			<id>yt:channel:</id>
+		</source>
+	</entry>
+
+	<entry>
+		<title type="html" xml:lang="en-us">Andrey Listopadov: The key point of Emacs</title>
+		<link href="https://andreyor.st/posts/2023-06-12-the-key-point-of-emacs/"/>
+		<id>https://andreyor.st/posts/2023-06-12-the-key-point-of-emacs/</id>
+		<updated>2023-06-12T20:32:00+00:00</updated>
+		<published></published>
+		<content type="html">&lt;p&gt;Lately, I’ve been reflecting on why I’ve settled with Emacs of all other text editors.
+You may remember my old &lt;a href=&quot;https://andreyor.st/posts/2020-04-29-text-editors/&quot;&gt;post&lt;/a&gt; where I go into lots of different &lt;em&gt;code&lt;/em&gt; editors, and I list Emacs among them too.
+That post itself was written in Emacs, like everything else in this blog, but I can’t say that I understood the main point of Emacs back then.
+Err, I don’t think I do now, hence the post doesn’t use “main point” in the name, but it feels that I’m getting closer.&lt;/p&gt;
+&lt;p&gt;Each editor has its own philosophy that kinda sells it to you.
+Like, Vim’s keyboard-oriented editing language, where you execute actions on text objects or Kakoune’s similar but inverted model of selecting objects first, then operating on them, or even on multiple objects at once.
+Visual Studio Code has out-of-the-boxiness and user-friendliness paired with a rich amount of extensions, modern and beautiful interface with rich rendering capabilities.
+Sublime Text’s speed, and so on.&lt;/p&gt;
+&lt;p&gt;But what’s the philosophy of Emacs?
+Emacs doesn’t have an editing language like Vim&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a class=&quot;footnote-ref&quot; href=&quot;https://andreyorst.gitlab.io/categories/emacs/feed.xml#fn:1&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;, it’s not as user-friendly as VSCode or Atom, its interface is far from modern, and rendering capabilities are kinda limited.
+One might say it’s extensibility, but I don’t think it’s a proper term here.
+VSCode, Sublime Text, and Vim can be extended with new features as well.
+Another point I often hear is that you can make Emacs “your own”.
+Well, so can be done with Vim, and people go to great lengths to do it with VSCode or Sublime.&lt;/p&gt;
+&lt;p&gt;I think the key point is that Emacs isn’t really just an editor - it’s a platform.
+It doesn’t really matter what extension language Emacs uses, and it doesn’t really matter if Emacs has millions of packages, as all other editors do.
+What does matter is that Emacs is a platform that allows its users not only to extend it with new features, but also change how it operates at runtime.
+Emacs Lisp is great for that purpose because it was basically developed as a system-level language for the Emacs system.
+All of the system’s functions are available to you as a user, and you can do whatever you want with them, down to the core.
+And while its core is written in C, nothing prevents you from calling these C functions from Emacs Lisp, much like you can do from the system language of your operating system.&lt;/p&gt;
+&lt;p&gt;I think that’s what differentiates Emacs from most other software I use, and I think it’s a great model.
+It kinda makes me think about Emacs as a Smalltalk system, which isn’t just a language, but an image that you can operate on.
+And it matches how Emacs Lisp is tied to Emacs itself, and I don’t really think it is really worth decoupling one from another because Emacs Lisp isn’t the greatest Lisp out there, to be honest.&lt;/p&gt;
+&lt;p&gt;Sadly, unlike Smalltalk, Emacs’ GUI system is far less advanced.
+You take &lt;a href=&quot;https://pharo.org/&quot; target=&quot;_blank&quot;&gt;Pharo&lt;/a&gt; or &lt;a href=&quot;https://squeak.org/&quot; target=&quot;_blank&quot;&gt;Squeak&lt;/a&gt;, and it comes with a graphical interface with proper buttons, widgets, and so on.
+Then you look at things like &lt;a href=&quot;https://gtoolkit.com/&quot; target=&quot;_blank&quot;&gt;GToolkit&lt;/a&gt;, which is based on Pharo, and begin to question yourself, why can’t we have something like this in Emacs?
+All these custom inspectors as they call them in GToolkit allowing you to interact with graphs, images, and even data structures are really nice to have&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a class=&quot;footnote-ref&quot; href=&quot;https://andreyorst.gitlab.io/categories/emacs/feed.xml#fn:2&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;There’s also another technology that acts similarly, although I can’t say it has the same level of integration with its core as Emacs or Smalltalk do.
+I’m talking about &lt;a href=&quot;https://www.electronjs.org/&quot; target=&quot;_blank&quot;&gt;Electron&lt;/a&gt;, the technology behind Atom, VSCode, and a lot of other software.
+I hope you can see why I think it is somewhat similar to Emacs - as it is a dynamic runtime system that runs on a pretty advanced core, but in this case, the core isn’t just a virtual machine, it’s a full-blown browser (though it is stripped down, a bit).
+Browser’s rendering capabilities are impressive, and support for all kinds of formats is also great, which makes it a nice target to base user applications on.
+Though, it’s more limited than Emacs, because you basically only have the Electron API, and you can’t go lower (correct me if I’m wrong).
+And because of this limitation, I can’t think of VSCode as I think of Emacs, though Atom was so close to it, as their approach to the whole structure of the program was a lot more modular.&lt;/p&gt;
+&lt;p&gt;Speaking of GUI, Emacs is limited to text buffers and basic overlays.
+Sure, that can make it look like Emacs has some kind of widgets, but it doesn’t feel like interacting with a widget, as you still insert text into the text buffer basically.
+Some &lt;a href=&quot;https://github.com/rougier/nano-emacs#experimental&quot; target=&quot;_blank&quot;&gt;projects&lt;/a&gt; even incorporate SVG rendering to make Emacs look more modern, I tried this &lt;a href=&quot;https://andreyor.st/2023-06-12-the-key-point-of-emacs/emacs.png&quot;&gt;too&lt;/a&gt;, but it still feels not as a real GUI app.
+Developing a set of GUI widgets is a hard task, and interfaces came a really long way since Emacs’ inception, and things like Smalltalk were basically aimed at graphical interfaces from the start so the comparison isn’t really fair.
+Though, a lot of people argue that a proper GUI will make it hard to use Emacs from the terminal, to which I would say that it’s fair, but also why?
+And a lot will argue that Emacs’ text-oriented interface is &lt;em&gt;better&lt;/em&gt; because it allows using the same set of functions for both text manipulation and interface manipulation (because it’s the same thing).
+I don’t think it’s a good design though, as it is basically re-purposing text editing features into a rendering engine which, while works, still makes me think that it would be nice to see a proper GUI implemented in Emacs.&lt;/p&gt;
+&lt;p&gt;Despite all of that, people basically live in Emacs.
+I do as well.
+I read and write mail, work on this blog, chat in IRC, working with Git, browse remote servers, read books, do planning, browse RSS feeds, and do lots of other minute tasks that I can’t really remember right now.
+All without opening a terminal, because with Emacs I don’t need one.
+What I’m trying to say here is that I don’t really need Emacs to be compatible with terminals, because, as I said, you can open Emacs SSH from it, you don’t really need to be able to SSH somewhere and open Emacs there, as a lot of people do with Vim.
+So a proper GUI won’t hurt Emacs in my opinion, because there’s no reason to run Emacs in the terminal at all.&lt;/p&gt;
+&lt;p&gt;And the thing is, I believe it is possible to implement a proper GUI in Emacs because, unlike in many other software, you can extend Emacs down to the core.
+And that’s why I love it, and I actually use it, changing the behavior of built-in packages to suit my needs, and creating helper functions to enhance the overall experience.
+For now, I can’t see myself leaving this ecosystem for something else, and Emacs is rapidly evolving, I think in the last three years there were more new exciting features than in the last five years before it.
+Maybe a proper GUI system will come as well, who knows?
+Or maybe a new &lt;a href=&quot;https://project-mage.org/emacs-is-not-enough&quot; target=&quot;_blank&quot;&gt;rival&lt;/a&gt; appears, that realized what makes Emacs great, but also realized that there are still a lot of things to improve on in this model.&lt;/p&gt;
+&lt;p&gt;Anyway, I’ve drifted from the main topic of this post.
+The thing is, it’s not just about extensibility or ability to make Emacs your own - a lot of software can do that.
+It’s about being a platform that gives you all the tools you need to build upon.
+Which Emacs really excels at, in my opinion.
+Thanks for reading.&lt;/p&gt;
+&lt;div class=&quot;footnotes&quot;&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id=&quot;fn:1&quot;&gt;
+&lt;p&gt;Although nothing prevents you from implementing one.
+Some even say that Emacs’ Vim emulation is better than the real thing.
+True, Emacs’ default editing experience isn’t the greatest, still, a lot of users stick to it and improve the main pain points based on their personal needs. &lt;a class=&quot;footnote-backref&quot; href=&quot;https://andreyorst.gitlab.io/categories/emacs/feed.xml#fnref:1&quot;&gt;↩︎&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&quot;fn:2&quot;&gt;
+&lt;p&gt;I work with Clojure a lot, and an advanced inspector that would allow me to navigate deep data structures would be a blast.
+And while CIDER has it, the experience is not as nice as it could have been.
+I’ve even tried using &lt;a href=&quot;https://github.com/djblue/portal&quot; target=&quot;_blank&quot;&gt;Portal&lt;/a&gt; which &lt;a href=&quot;https://github.com/djblue/portal/blob/master/doc/editors/emacs.md&quot; target=&quot;_blank&quot;&gt;comes with support for xwidgets&lt;/a&gt;, but it still isn’t a great experience, because &lt;a href=&quot;https://www.gnu.org/software/emacs/manual/html_node/elisp/Xwidgets.html&quot; target=&quot;_blank&quot;&gt;Xwidgets&lt;/a&gt;, while integrated into Emacs window system, is still foreign, and what’s displayed there can’t be controlled like Emacs.
+That’s why I think a proper GUI would be a better fit. &lt;a class=&quot;footnote-backref&quot; href=&quot;https://andreyorst.gitlab.io/categories/emacs/feed.xml#fnref:2&quot;&gt;↩︎&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</content>
+		<author>
+			<name>Andrey Listopadov</name>
+			<uri>https://andreyor.st/categories/emacs/</uri>
+		</author>
+		<source>
+			<title type="html">Andrey Listopadov</title>
+			<subtitle type="html">Posts from Andrey Listopadov</subtitle>
+			<link rel="self" href="https://andreyor.st/categories/emacs/feed.xml"/>
+			<id>https://andreyor.st/categories/emacs/</id>
+			<rights type="html">Andrey Listopadov 2020-2023 - This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</rights>
+		</source>
+	</entry>
+
+	<entry>
+		<title type="html">Marcin Borkowski: Counting time, backwards</title>
+		<link href="https://mbork.pl/2023-06-12_Counting_time%2c_backwards"/>
+		<id>https://mbork.pl/2023-06-12_Counting_time%2c_backwards</id>
+		<updated>2023-06-12T18:08:41+00:00</updated>
+		<published></published>
+		<content type="html">Some time ago I thought that I would like to have a feature Org mode doesn’t seem to have. There are things I would like to do once in a while, but I don’t need a reminder with a hard deadline (like a repeating one) – I’d prefer a gentle nudge. What if I could display a list of things I select, each one with information how long ago I did it last?</content>
+		<author>
+			<name>Marcin Borkowski</name>
+			<uri>https://mbork.pl/Homepage</uri>
+		</author>
+		<source>
+			<title type="html">Marcin Borkowski:  Content AND Presentation</title>
+			<subtitle type="html">Strona domowa Marcina Borkowskiego</subtitle>
+			<link rel="self" href="https://mbork.pl/?action=rss;rcfilteronly=CategoryEmacs;all=0;showedit=0;title=%20Content%20AND%20Presentation"/>
+			<id>https://mbork.pl/Homepage</id>
+		</source>
+	</entry>
+
+	<entry>
+		<title type="html" xml:lang="en-US">Irreal: Emacs Elements Video on Narrowing</title>
+		<link href="https://irreal.org/blog/?p=11420"/>
+		<id>https://irreal.org/blog/?p=11420</id>
+		<updated>2023-06-12T17:42:06+00:00</updated>
+		<published></published>
+		<content type="html" xml:lang="en-US">&lt;p&gt;A useful but underused Emacs facility is narrowing. The idea is that you can limit the visibility of a buffer’s text to a region, function, or an Org mode subtree. The rest of the buffer is still there but you can’t see or access it. The operations are pretty simple but still seem hard to remember for many people.&lt;/p&gt;
+&lt;p&gt;Over at &lt;a href=&quot;https://www.youtube.com/@emacselements/videos&quot;&gt;Emacs Elements Channel&lt;/a&gt; there’s a new video on &lt;a href=&quot;https://www.youtube.com/watch?v=4z-ZAklZOwY&quot;&gt;narrowing and how to use it&lt;/a&gt;. As I said, it’s really pretty simple despite the problem some folks have with remembering the keystrokes. The biggest problem is widening or undoing a narrowing. I don’t understand these problems even though I had them myself.&lt;/p&gt;
+&lt;p&gt;Artur Malabarba &lt;a href=&quot;https://irreal.org/blog/?p=4771&quot;&gt;to the rescue&lt;/a&gt;. In his now, sadly, abandoned site, &lt;a href=&quot;http://endlessparentheses.com&quot;&gt;Endless Parentheses&lt;/a&gt;, he presents the &lt;code&gt;narrow-or-widen-dwim&lt;/code&gt; function that makes using narrowing trivial. If you call it and the narrowing is already in effect, it widens the narrowed text. Otherwise it narrows to the proper text given the context. As I say in the above post, I don’t think I’ve called any of the narrowing functions directly since I installed it. Like Malabarba, I put it in my “toggle” key map so it’s easy to remember and use.&lt;/p&gt;
+&lt;p&gt;The video is only 6 minutes, 12 seconds long so it should be easy to watch. After you do, be sure to check out Malabarba’s function. It will make using narrowing easy. I installed it 9 years ago and haven’t used anything else for narrowing since.&lt;/p&gt;</content>
+		<author>
+			<name>jcs</name>
+			<uri>https://irreal.org/blog</uri>
+		</author>
+		<source>
+			<title type="html">Emacs – Irreal</title>
+			<subtitle type="html">The minds had long ago come up with a proper name for it; they called it the Irreal, but they thought of it as Infinite Fun. That was what they really knew it as. The Land of Infinite Fun. --Iain M. Banks, Excession</subtitle>
+			<link rel="self" href="http://irreal.org/blog/?tag=emacs&amp;feed=rss2"/>
+			<id>https://irreal.org/blog</id>
+		</source>
+	</entry>
+
+	<entry>
+		<title type="html" xml:lang="en-US">Sacha Chua: 2023-06-12 Emacs news</title>
+		<link href="https://sachachua.com/blog/2023/06/2023-06-12-emacs-news/"/>
+		<id>https://sachachua.com/blog/2023/06/2023-06-12-emacs-news/</id>
+		<updated>2023-06-12T14:30:59+00:00</updated>
+		<published></published>
+		<content type="html">&lt;ul class=&quot;org-ul&quot;&gt;
+&lt;li&gt;&lt;span class=&quot;timestamp-wrapper&quot;&gt;&lt;span class=&quot;timestamp&quot;&gt;[2023-06-14 Wed]&lt;/span&gt;&lt;/span&gt;: Updated &lt;a href=&quot;https://www.youtube.com/watch?v=YHZ_jRUkp38&quot;&gt;Elpaca video link&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+&lt;a href=&quot;https://reddit.com/r/emacs&quot;&gt;/r/emacs&lt;/a&gt; and many other subreddits will be private on Monday June 12
+and Tuesday June 13 to protest upcoming changes to Reddit's pricing
+for API access and third-party apps.
+&lt;/p&gt;
+
+&lt;ul class=&quot;org-ul&quot;&gt;
+&lt;li&gt;Upcoming events:
+&lt;ul class=&quot;org-ul&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;https://emacs-apac.gitlab.io/announcements/june-2023/&quot;&gt;Emacs APAC: Announcing Emacs Asia-Pacific (APAC) virtual meetup, Saturday, June 24, 2023&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Mastering Emacs book club &lt;a href=&quot;https://susam.net/maze/meet/mastering-emacs/&quot;&gt;https://susam.net/maze/meet/mastering-emacs/&lt;/a&gt; Fri Jun 16 1200 America/Vancouver - 1400 America/Chicago - 1500 America/Toronto - 1900 Etc/GMT - 2100 Europe/Berlin – Sat Jun 17 0030 Asia/Kolkata - 0300 Asia/Singapore&lt;/li&gt;
+&lt;li&gt;Mastering Emacs book club &lt;a href=&quot;https://susam.net/maze/meet/mastering-emacs/&quot;&gt;https://susam.net/maze/meet/mastering-emacs/&lt;/a&gt; Sat Jun 17 0200 America/Vancouver - 0400 America/Chicago - 0500 America/Toronto - 0900 Etc/GMT - 1100 Europe/Berlin - 1430 Asia/Kolkata - 1700 Asia/Singapore&lt;/li&gt;
+&lt;li&gt;EmacsSF (in person): coffee.el in SF &lt;a href=&quot;https://www.meetup.com/emacs-sf/events/294038201/&quot;&gt;https://www.meetup.com/emacs-sf/events/294038201/&lt;/a&gt; Sat Jun 17 1100 America/Los_Angeles&lt;/li&gt;
+&lt;li&gt;Mastering Emacs book club &lt;a href=&quot;https://susam.net/maze/meet/mastering-emacs/&quot;&gt;https://susam.net/maze/meet/mastering-emacs/&lt;/a&gt; Sun Jun 18 0200 America/Vancouver - 0400 America/Chicago - 0500 America/Toronto - 0900 Etc/GMT - 1100 Europe/Berlin - 1430 Asia/Kolkata - 1700 Asia/Singapore&lt;/li&gt;
+&lt;li&gt;M-x Research (contact them for password): TBA &lt;a href=&quot;https://m-x-research.github.io/&quot;&gt;https://m-x-research.github.io/&lt;/a&gt; Wed Jun 21 0800 America/Vancouver - 1000 America/Chicago - 1100 America/Toronto - 1500 Etc/GMT - 1700 Europe/Berlin - 2030 Asia/Kolkata - 2300 Asia/Singapore&lt;/li&gt;
+&lt;li&gt;m-x-erlangen (in person): Introduction to Emacs and Emacs Lisp &lt;a href=&quot;https://www.freelists.org/post/m-x-erlangen/New-Talk-Introduction-to-Emacs-and-Emacs-Lisp&quot;&gt;https://www.freelists.org/post/m-x-erlangen/New-Talk-Introduction-to-Emacs-and-Emacs-Lisp&lt;/a&gt; - June 22 6:30pm in Erlangen, Germany&lt;/li&gt;
+&lt;li&gt;Emacs APAC (virtual) &lt;a href=&quot;https://emacs-apac.gitlab.io/&quot;&gt;https://emacs-apac.gitlab.io/&lt;/a&gt; Sat Jun 24 0130 America/Vancouver - 0330 America/Chicago - 0430 America/Toronto - 0830 Etc/GMT - 1030 Europe/Berlin - 1400 Asia/Kolkata - 1630 Asia/Singapore&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Emacs configuration:
+&lt;ul class=&quot;org-ul&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;https://willschenk.com/howto/2023/setting_up_emacs_reredux/&quot;&gt;Will Schenk: Setting up emacs re-re-dux&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://youtu.be/YHZ_jRUkp38&quot;&gt;Elpaca: Harnessing the power of an advanced Emacs package manager&lt;/a&gt; (&lt;a href=&quot;https://www.reddit.com/r/emacs/comments/14534vb/elpaca_harnessing_the_power_of_an_advanced_emacs/&quot;&gt;Reddit&lt;/a&gt;) - updated link&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://yummymelon.com/devnull/my-emacs-config-repo.html&quot;&gt;nfdn: My Emacs Config Repo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=4ZH9pobulDo&quot;&gt;Fixing Some Major Bugs And Minor Annoyances - Configuring Emacs 02&lt;/a&gt; (27:47)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=HuW4UvX1-uY&quot;&gt;A New Model for Crafted Emacs - System Crafters live!&lt;/a&gt; (01:49:14)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Appearance:
+&lt;ul class=&quot;org-ul&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;http://yummymelon.com/devnull/automatically-adjusting-emacs-to-macos-switches-in-appearance.html&quot;&gt;nfdn: Automatically adjusting Emacs to macOS switches in appearance&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://protesilaos.com/codelog/2023-06-08-ef-themes-1-1-0/&quot;&gt;Protesilaos Stavrou: Emacs: ef-themes version 1.1.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://protesilaos.com/codelog/2023-06-09-cursory-1-0-0/&quot;&gt;Protesilaos Stavrou: Emacs: cursory version 1.0.0&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Navigation:
+&lt;ul class=&quot;org-ul&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;https://protesilaos.com/codelog/2023-06-10-emacs-search-replace-basics/&quot;&gt;Protesilaos Stavrou: Emacs: basics of search and replace&lt;/a&gt; (53:03, &lt;a href=&quot;https://irreal.org/blog/?p=11418&quot;&gt;Irreal&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://youtu.be/4z-ZAklZOwY&quot;&gt;Getting into the straights in Emacs with narrowing&lt;/a&gt; (6:13, &lt;a href=&quot;https://www.reddit.com/r/emacs/comments/144rzc4/getting_into_the_straights_in_emacs_with_narrowing/&quot;&gt;Reddit&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;TRAMP:
+&lt;ul class=&quot;org-ul&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;https://en.liujiacai.net/2023/06/10/troubleshoot-tramp-hang/&quot;&gt;How to troubleshoot why tramp hang your Emacs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Org Mode:
+&lt;ul class=&quot;org-ul&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;https://readingworldmagazine.com/emacs/2023-06-11-introducing-org-mode/&quot;&gt;yuri tricys: Introducing Emacs Org-Mode in 2023&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.reddit.com/r/orgmode/comments/1414ha1/has_anyone_here_with_adhd_or_similar_issues_used/&quot;&gt;Has anyone here with ADHD or similar issues used org-mode to get your life on track?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.reddit.com/r/orgmode/comments/1438x6j/orgnavigator_programmable_composable_shortcuts/&quot;&gt;Org-Navigator: Programmable, Composable Shortcuts For Org-Refile&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=o6rE18Mxu9U&quot;&gt;Analyze Your Time with Org Mode — Org Mode Clocktables&lt;/a&gt; (11:49, &lt;a href=&quot;https://www.reddit.com/r/emacs/comments/144nyzb/analyze_your_time_with_org_mode_org_mode/&quot;&gt;Reddit&lt;/a&gt;, &lt;a href=&quot;https://irreal.org/blog/?p=11416&quot;&gt;Irreal&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/pondersson/org-bulletproof&quot;&gt;New package: org-bulletproof (automatic plain list bullet cycling)&lt;/a&gt; (&lt;a href=&quot;https://www.reddit.com/r/emacs/comments/142827g/new_package_orgbulletproof_automatic_plain_list/&quot;&gt;Reddit&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://ag91.github.io/blog/2023/06/06/ob-gore-literate-go-run-via-the-gore-repl&quot;&gt;Andrea: ob-gore: literate Go run via the Gore REPL&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Org development:
+&lt;ul class=&quot;org-ul&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;https://git.savannah.gnu.org/cgit/emacs/org-mode.git/commit/etc/ORG-NEWS?id=ba8c4686347a0411ab84e89232b64e3ee1ef10f9&quot;&gt;org-insert-todo-heading-respect-content: Fix regression in b4e41b&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Coding:
+&lt;ul class=&quot;org-ul&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;https://kchousos.github.io/posts/sicp-in-emacs/&quot;&gt;SICP in Emacs&lt;/a&gt; (&lt;a href=&quot;https://www.reddit.com/r/emacs/comments/143cyw3/sicp_in_emacs/&quot;&gt;Reddit&lt;/a&gt;, &lt;a href=&quot;https://irreal.org/blog/?p=11412&quot;&gt;Irreal&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.fitzsim.org/blog/?p=669&quot;&gt;Thomas Fitzsimmons: firefox-javascript-repl&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.fitzsim.org/blog/?p=681&quot;&gt;Thomas Fitzsimmons: ulisp-repl&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.emacs.dyerdwelling.family/emacs/20230604121310-emacs--magit-insert-tracked-files/&quot;&gt;James Dyer: Magit Status To Show Tracked Files&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://i.redd.it/kzs28de4e84b1.gif&quot;&gt;Indent with tree-sitter is nice&lt;/a&gt; (&lt;a href=&quot;https://www.reddit.com/r/emacs/comments/141l5dp/indent_with_treesitter_is_nice/&quot;&gt;Reddit&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Mail, news, and chat:
+&lt;ul class=&quot;org-ul&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.reddit.com/r/emacs/comments/1450ntb/atom_backend_for_gnus_nnatom/&quot;&gt;Atom backend for Gnus (nnatom)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Fun:
+&lt;ul class=&quot;org-ul&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;https://youtu.be/urcL86UpqZc&quot;&gt;Interview with an Emacs Enthusiast in 2023 [Colorized]​&lt;/a&gt; (8:50, &lt;a href=&quot;https://www.reddit.com/r/emacs/comments/1460otc/interview_with_an_emacs_enthusiast_in_2033/&quot;&gt;Reddit&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;AI:
+&lt;ul class=&quot;org-ul&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/freckletonj/llmpal&quot;&gt;LLM Pal: AI inside Emacs via LSP. Locally hosted models &amp;amp; OpenAI. Code is Clean'N'Hackable.&lt;/a&gt; (&lt;a href=&quot;https://www.reddit.com/r/emacs/comments/1459elk/llm_pal_ai_inside_emacs_via_lsp_locally_hosted/&quot;&gt;Reddit&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Community:
+&lt;ul class=&quot;org-ul&quot;&gt;
+&lt;li&gt;Reddit: &lt;a href=&quot;https://www.reddit.com/r/emacs/comments/14377k9/weekly_tips_tricks_c_thread/&quot;&gt;Weekly Tips, Tricks, &amp;amp;c. Thread&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=aU_yNH3uHyg&quot;&gt;Should You Bother Learning Emacs, Vim, Or Anything Old and Difficult?&lt;/a&gt; (04:27)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://corwin.bru.st/2023-06-05-the-turtle-and-the-snail/&quot;&gt;Corwin Brust: The Turtle and the Snail&lt;/a&gt; (&lt;a href=&quot;https://irreal.org/blog/?p=11408&quot;&gt;Irreal&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Other:
+&lt;ul class=&quot;org-ul&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;https://irreal.org/blog/?p=11410&quot;&gt;Irreal: The Real Emacs Advantage&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=yFXF-oEAEww&quot;&gt;emacs in Tamil part2&lt;/a&gt; (40:13)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Emacs development:
+&lt;ul class=&quot;org-ul&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;https://lists.gnu.org/archive/html/emacs-devel/2023-06/msg00238.html&quot;&gt;Re: Native compilation on as default?&lt;/a&gt; - devs looking for feedback as people try Emacs 29&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://git.savannah.gnu.org/cgit/emacs.git/commit/etc/NEWS?id=4f66cbbfe520ee31ef26676e09a926217d9736fe&quot;&gt;Avoid header line with some empty non-nil formats&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;New packages:
+&lt;ul class=&quot;org-ul&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;https://melpa.org/#/autoscratch&quot; target=&quot;_blank&quot;&gt;autoscratch&lt;/a&gt;: Automatically switch scratch buffer mode (MELPA)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://melpa.org/#/buffer-name-relative&quot; target=&quot;_blank&quot;&gt;buffer-name-relative&lt;/a&gt;: Relative buffer names (MELPA)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://elpa.gnu.org/packages/emacs-gc-stats.html&quot; target=&quot;_blank&quot;&gt;emacs-gc-stats&lt;/a&gt;: Collect Emacs GC statistics (GNU ELPA)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://melpa.org/#/hippo-themes&quot; target=&quot;_blank&quot;&gt;hippo-themes&lt;/a&gt;: Hippo color theme (MELPA)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://melpa.org/#/klondike&quot; target=&quot;_blank&quot;&gt;klondike&lt;/a&gt;: Klondike (MELPA)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://melpa.org/#/nushell-mode&quot; target=&quot;_blank&quot;&gt;nushell-mode&lt;/a&gt;: Major mode for Nushell scripts (MELPA)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://melpa.org/#/occurx-mode&quot; target=&quot;_blank&quot;&gt;occurx-mode&lt;/a&gt;: Occur-like filtering of buffers with rx patterns (MELPA)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+Links from &lt;a href=&quot;https://www.reddit.com/r/emacs&quot;&gt;reddit.com/r/emacs&lt;/a&gt;, &lt;a href=&quot;https://www.reddit.com/r/orgmode&quot;&gt;r/orgmode&lt;/a&gt;, &lt;a href=&quot;https://www.reddit.com/r/spacemacs&quot;&gt;r/spacemacs&lt;/a&gt;, &lt;a href=&quot;https://www.reddit.com/r/planetemacs&quot;&gt;r/planetemacs&lt;/a&gt;, &lt;a href=&quot;https://hn.algolia.com/?query=emacs&amp;amp;sort=byDate&amp;amp;prefix&amp;amp;page=0&amp;amp;dateRange=all&amp;amp;type=story&quot;&gt;Hacker News&lt;/a&gt;, &lt;a href=&quot;https://lobste.rs/search?q=emacs&amp;amp;what=stories&amp;amp;order=newest&quot;&gt;lobste.rs&lt;/a&gt;, &lt;a href=&quot;https://lemmy.ml/c/emacs&quot;&gt;lemmy&lt;/a&gt;, &lt;a href=&quot;https://planet.emacslife.com&quot;&gt;planet.emacslife.com&lt;/a&gt;, &lt;a href=&quot;https://www.youtube.com/playlist?list=PL4th0AZixyREOtvxDpdxC9oMuX7Ar7Sdt&quot;&gt;YouTube&lt;/a&gt;, &lt;a href=&quot;http://git.savannah.gnu.org/cgit/emacs.git/log/etc/NEWS&quot;&gt;the Emacs NEWS file&lt;/a&gt;, &lt;a href=&quot;https://emacslife.com/calendar/&quot;&gt;Emacs Calendar&lt;/a&gt;, and &lt;a href=&quot;http://lists.gnu.org/archive/html/emacs-devel/2023-06&quot;&gt;emacs-devel&lt;/a&gt;. Thanks to Andrés Ramírez for emacs-devel links. Do you have an Emacs-related link or announcement? Please e-mail me at &lt;a href=&quot;mailto:sacha@sachachua.com&quot;&gt;sacha@sachachua.com&lt;/a&gt;. Thank you!
+&lt;/p&gt;</content>
+		<author>
+			<name>Sacha Chua</name>
+			<uri>https://sachachua.com/blog/category/emacs/feed/index.xml</uri>
+		</author>
+		<source>
+			<title type="html">Sacha Chua - category - emacs</title>
+			<subtitle type="html">Emacs, sketches, and life</subtitle>
+			<link rel="self" href="https://sachachua.com/blog/category/emacs/feed/"/>
+			<id>https://sachachua.com/blog/category/emacs/feed/index.xml</id>
+		</source>
+	</entry>
+
+	<entry>
+		<title type="html">whatacold: Join Lines By A Separator in Emacs</title>
+		<link href="https://whatacold.io/blog/2023-06-12-emacs-join-lines/"/>
+		<id>https://whatacold.io/blog/2023-06-12-emacs-join-lines/</id>
+		<updated>2023-06-12T14:23:12+00:00</updated>
+		<published></published>
+		<content type="html">So sometimes I need to join a few lines by a separator while I'm coding, for example, turn the below lines,
+foo bar baz   into foo + bar + baz. (This is a silly example, I will update if I come up with a better one :-P )
+ When I was in a rush in the past, I usually baked a keyboard macro temporarily and then applied it to achieve this goal, thought reliable, it's a little bit cumbersome to record it.</content>
+		<author>
+			<name>whatacold</name>
+			<email>whatacold@gmail.com</email>
+			<uri>https://whatacold.io/tags/emacs/</uri>
+		</author>
+		<source>
+			<title type="html">Emacs on whatacold's space</title>
+			<subtitle type="html">Recent content in Emacs on whatacold's space</subtitle>
+			<link rel="self" href="https://whatacold.io/tags/emacs/rss.xml"/>
+			<id>https://whatacold.io/tags/emacs/</id>
+		</source>
+	</entry>
+
+	<entry>
+		<title type="html">Zachary Kanfer: Don't make Emacs keymaps -- define them.</title>
+		<link href="https://zck.org/define-keymap"/>
+		<id>https://zck.org/define-keymap</id>
+		<updated>2023-06-12T05:00:00+00:00</updated>
+		<published></published>
+		<content type="html">&lt;div&gt;    &lt;p&gt;You know how I've encouraged &lt;a href=&quot;https://zck.org/reduce-your-emacs-config&quot;&gt;contributing code upstream&lt;/a&gt;? Let it not be said I don't take my own advice.&lt;/p&gt;    &lt;p&gt;This all started when I was looking at some &lt;a href=&quot;https://www.gnu.org/software/emacs/manual/html_node/elisp/Keymap-Basics.html&quot;&gt;Emacs keymaps&lt;/a&gt;. I realized that making keymaps is verbose, with a lot of boilerplate. The code looks something like:&lt;/p&gt;    &lt;code class=&quot;code-emacs-lisp&quot;&gt;        &lt;pre&gt;(let ((map (make-sparse-keymap)))  (define-key map (kbd &quot;a&quot;) #'function-a-here)  (define-key map (kbd &quot;M-a&quot;) #'function-a-here)  (define-key map (kbd &quot;b&quot;) #'my-function-b)  (define-key map (kbd &quot;C-c C&quot;) #'function-c-here)  (define-key map (kbd &quot;d&quot;) #'function-d-here)  map)&lt;/pre&gt;&lt;/code&gt;    &lt;p&gt;I thought I could make something better – where you could not have this boilerplate. A function that created and returned a keymap that's filled with your values and doesn't need to be locally bound. A keymap-creation function that knows what you want, where you don't have to wrap all the keys in &lt;code&gt;kbd&lt;/code&gt; calls.&lt;/p&gt;    &lt;p&gt;So I programmed and tested, and the new code was ready. While writing a proposal to the emacs mailing list, I looked up examples of &lt;code&gt;make-keymap&lt;/code&gt; already in Emacs.&lt;/p&gt;    &lt;p&gt;Then I found &lt;code&gt;define-keymap&lt;/code&gt;.&lt;/p&gt;    &lt;p&gt;It does everything I wanted. Everything I made, this function does. Even better, it's a single function instead of two. I had made one function for sparse keymaps and a second function for normal keymaps.&lt;/p&gt;    &lt;p&gt;Why didn't I find this earlier? Well, &lt;code&gt;define-keymap&lt;/code&gt; is not documented in the &lt;a href=&quot;https://www.gnu.org/software/emacs/manual/html_node/elisp/Creating-Keymaps.html&quot;&gt;creating keymaps&lt;/a&gt; documentation. For that matter, it's nowhere in &lt;a href=&quot;https://www.gnu.org/software/emacs/manual/html_node/elisp/Index.html#Index_fn_letter-D&quot;&gt;the documentation&lt;/a&gt;.&lt;/p&gt;    &lt;p&gt;It's not even in Emacs!&lt;/p&gt;    &lt;p&gt;Well, it is. It's just not in a &lt;em&gt;released&lt;/em&gt; Emacs. It will come out as part of Emacs 29, but earlier Emacs versions can get &lt;code&gt;define-keymap&lt;/code&gt; from the &lt;a href=&quot;https://github.com/emacs-compat/compat&quot;&gt;compat&lt;/a&gt; package. Right now, the best place to look at its documentation is &lt;a href=&quot;https://git.savannah.gnu.org/cgit/emacs.git/tree/lisp/keymap.el#n478&quot;&gt;in the git repository&lt;/a&gt;.&lt;/p&gt;    &lt;p&gt;It's a very nice function. The sparse keymap above can instead be:&lt;/p&gt;    &lt;code class=&quot;code-emacs-lisp&quot;&gt;        &lt;pre&gt;(define-keymap  &quot;a&quot; #'function-a-here  &quot;M-a&quot; #'function-a-here  &quot;b&quot; #'my-function-b  &quot;C-c C&quot; #'function-c-here  &quot;d&quot; #'function-d-here)&lt;/pre&gt;&lt;/code&gt;    &lt;p&gt;This is far simpler and more readable. There are many options it can take, which I won't go over here.&lt;/p&gt;    &lt;p&gt;So I don't think there's a reason to use &lt;code&gt;make-keymap&lt;/code&gt; anymore. &lt;code&gt;define-keymap&lt;/code&gt; is better.&lt;/p&gt;&lt;/div&gt;</content>
+		<author>
+			<name>Zachary Kanfer</name>
+			<uri>https://zck.org</uri>
+		</author>
+		<source>
+			<title type="html">zck.org</title>
+			<subtitle type="html">The personal site of Zachary Kanfer.</subtitle>
+			<link rel="self" href="https://zck.org/feed.rss"/>
+			<id>https://zck.org</id>
+		</source>
+	</entry>
+
+	<entry>
+		<title type="html" xml:lang="en-US">Irreal: Emacs Search and Replace</title>
+		<link href="https://irreal.org/blog/?p=11418"/>
+		<id>https://irreal.org/blog/?p=11418</id>
+		<updated>2023-06-11T17:17:52+00:00</updated>
+		<published></published>
+		<content type="html" xml:lang="en-US">&lt;p&gt;Protesilaos Stavrou (Prot) has a really, really excellent video on the &lt;a href=&quot;https://www.youtube.com/watch?v=f2mQXNnChwc&quot;&gt;Emacs search/replace functionality&lt;/a&gt;. Except for a short section at the end, it doesn’t consider external packages; it’s about the default functionality. Although Prot says the video considers only the basics and is not meant to be comprehensive, it is, in fact, a fairly complete explanation of how you can search and replace out-of-the-box with Emacs.&lt;/p&gt;
+&lt;p&gt;Prot starts, of course, with &lt;code&gt;isearch&lt;/code&gt;. You wouldn’t think there’s that much to know other than, say, being able to search in reverse but there’s much, much more. You can, for example, move forward and backwards within the matches using &lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;s&lt;/kbd&gt; /  &lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;r&lt;/kbd&gt; (with the default bindings). That’s pretty well known but did you know that you can exit the search with any motion command? That’s really handy if you want to position the cursor at, say, the beginning of the target word. Just type &lt;kbd&gt;Meta&lt;/kbd&gt;+&lt;kbd&gt;b&lt;/kbd&gt; to exit the search &lt;i&gt;and&lt;/i&gt; put the cursor at the start of the word. There’s plenty more functionality including putting the results in an occur buffer so take a look at the video for the details.&lt;/p&gt;
+&lt;p&gt;Of course, you can also do regular expression searches. I generally use &lt;code&gt;swiper-isearch&lt;/code&gt; from the &lt;a href=&quot;https://github.com/abo-abo/swiper&quot;&gt;Swiper/Ivy package&lt;/a&gt; to do my searches and one of its features that I really like is that a single space in a regex is interpreted as &lt;code&gt;.*?&lt;/code&gt;. That covers a surprisingly large fraction of the cases that you use more complex regexes for. It turns out, that you can configure &lt;code&gt;isearch-forward-regexp&lt;/code&gt; (and its backward sibling) to the do same thing. See the video for the magic incantation.&lt;/p&gt;
+&lt;p&gt;The search commands all have corresponding search/replace variants and Prot covers those too. Most of the extra functionality that Prot describes for searching applies to those commands too.&lt;/p&gt;
+&lt;p&gt;Finally the video considers &lt;code&gt;occur&lt;/code&gt; and &lt;code&gt;wgrep&lt;/code&gt; and how you can move to these from any of the search commands. There’s a lot of material so you need to watch it to see everything that’s available. The video is just short of an hour (53 minutes, 2 seconds) so you’ll need to schedule it but believe me, it’s worth your time.&lt;/p&gt;</content>
+		<author>
+			<name>jcs</name>
+			<uri>https://irreal.org/blog</uri>
+		</author>
+		<source>
+			<title type="html">Emacs – Irreal</title>
+			<subtitle type="html">The minds had long ago come up with a proper name for it; they called it the Irreal, but they thought of it as Infinite Fun. That was what they really knew it as. The Land of Infinite Fun. --Iain M. Banks, Excession</subtitle>
+			<link rel="self" href="http://irreal.org/blog/?tag=emacs&amp;feed=rss2"/>
+			<id>https://irreal.org/blog</id>
+		</source>
+	</entry>
+
+	<entry>
+		<title type="html" xml:lang="en-US">yuri tricys: Introducing Emacs Org-Mode in 2023</title>
+		<link href="https://readingworldmagazine.com/emacs/2023-06-11-introducing-org-mode/"/>
+		<id>https://readingworldmagazine.com/emacs/2023-06-11-introducing-org-mode/</id>
+		<updated>2023-06-11T00:00:00+00:00</updated>
+		<published></published>
+		<content type="html">If you’re an Emacs user, you are likely already an org-mode user, org-mode is where it’s at; but … if you’re new to Emacs or Emacs org-mode, read on dear reader, read on.
+Org-mode provides an incredible amount of functionality, from turning documents into websites, downloading images from the net, to clocking your time.
+A Few Things You Can Do With Org-mode Organize any code into foldable sections that can be output into other files Simplify Latex Use org-tables with excelish functionality directly in emacs Use open ai in emacs Write HTML emails (with mu4e) Export buffer contents to HTML and print to pdf in the browser Create a custom calender with notes and reminders Access org notes from your phone Use timestamps in org-notes to remind you on your phone Query your notes like a database Edit Google docs with CSS Create slides Manage contacts Manage multiple code files from within the same document Track your time And much more … Here’s a screen shot of the many sections of org related code in the ‘poseidon’ editor configuration.</content>
+		<author>
+			<name>yuri tricys</name>
+			<uri>https://readingworldmagazine.com/tags/emacs/</uri>
+		</author>
+		<source>
+			<title type="html">emacs on READING WORLD MAGAZINE</title>
+			<subtitle type="html">Recent content in emacs on READING WORLD MAGAZINE</subtitle>
+			<link rel="self" href="http://readingworldmagazine.com/tags/emacs/index.xml"/>
+			<id>https://readingworldmagazine.com/tags/emacs/</id>
+		</source>
+	</entry>
+
+	<entry>
+		<title type="html" xml:lang="en-US">Irreal: Clocktables</title>
+		<link href="https://irreal.org/blog/?p=11416"/>
+		<id>https://irreal.org/blog/?p=11416</id>
+		<updated>2023-06-10T17:30:41+00:00</updated>
+		<published></published>
+		<content type="html" xml:lang="en-US">&lt;p&gt;Over at the &lt;a href=&quot;https://www.youtube.com/@JakeBox0/featured&quot;&gt;Straightforward Emacs channel&lt;/a&gt;, Jake B. has an informative video on &lt;a href=&quot;https://www.youtube.com/watch?v=o6rE18Mxu9U&quot;&gt;Org mode clocktables&lt;/a&gt;. Most Org mode users knows that you can clock in and out of Org headings giving you a way of tracking the time you spend on various tasks. That’s really handy if you’re charging for your time or if your employer requires a periodic report on the time you spent on various jobs.&lt;/p&gt;
+&lt;p&gt;That’s great but there’s much more. You can at any time generate a clocktable that will list the total time spent on each task and show a breakdown of the various times spent working on each task. Again, this is pretty well known but it turns out it’s possible to configure a clocktable in various ways to get the exact information you need displayed in the way you need it to be displayed. That includes specifying a time block—such as today, yesterday, thismonth, etc—to delimit the data included.&lt;/p&gt;
+&lt;p&gt;Jake B walks us through all that starting with a simple default table for a single heading. He uses that to show some of the configuration options and then moves on to generating a table for the whole file. Finally, he shows two ways of including data from more than one file. The first way specifies each file individually while the second is a tiny bit of Elisp that shows how to include any file matching a regular expression using &lt;code&gt;directory-files-recursively&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The video is 11 minutes 47 seconds long so it shouldn’t be too hard to fit in. It is, in any event, well worth the time to view it.&lt;/p&gt;</content>
+		<author>
+			<name>jcs</name>
+			<uri>https://irreal.org/blog</uri>
+		</author>
+		<source>
+			<title type="html">Emacs – Irreal</title>
+			<subtitle type="html">The minds had long ago come up with a proper name for it; they called it the Irreal, but they thought of it as Infinite Fun. That was what they really knew it as. The Land of Infinite Fun. --Iain M. Banks, Excession</subtitle>
+			<link rel="self" href="http://irreal.org/blog/?tag=emacs&amp;feed=rss2"/>
+			<id>https://irreal.org/blog</id>
+		</source>
+	</entry>
+
+	<entry>
+		<title type="html" xml:lang="en-us">Emacs APAC: Announcing Emacs Asia-Pacific (APAC) virtual meetup, Saturday, June 24, 2023</title>
+		<link href="https://emacs-apac.gitlab.io/announcements/june-2023/"/>
+		<id>https://emacs-apac.gitlab.io/announcements/june-2023/</id>
+		<updated>2023-06-10T00:01:19+00:00</updated>
+		<published></published>
+		<content type="html">This month’s Emacs Asia-Pacific (APAC) virtual meetup is scheduled for Saturday, June 24, 2023 with BigBlueButton and #emacs on Libera Chat IRC. The timing will be 1400 to 1500 IST.
+The meetup might get extended by 30 minutes if there is any talk, this page will be updated accordingly.
+If you would like to give a demo or talk (maximum 20 minutes) on GNU Emacs or any variant, please contact bhavin192 on Libera Chat with your talk details:</content>
+		<author>
+			<name>Emacs APAC</name>
+			<uri>https://emacs-apac.gitlab.io/categories/event/</uri>
+		</author>
+		<source>
+			<title type="html">Event on Emacs APAC</title>
+			<subtitle type="html">Recent content in Event on Emacs APAC</subtitle>
+			<link rel="self" href="https://emacs-apac.gitlab.io/categories/event/index.xml"/>
+			<id>https://emacs-apac.gitlab.io/categories/event/</id>
+		</source>
+	</entry>
+
+	<entry>
+		<title type="html">Protesilaos Stavrou: Emacs: basics of search and replace</title>
+		<link href="https://protesilaos.com/codelog/2023-06-10-emacs-search-replace-basics/"/>
+		<id>https://protesilaos.com/codelog/2023-06-10-emacs-search-replace-basics/</id>
+		<updated>2023-06-10T00:00:00+00:00</updated>
+		<published></published>
+		<content type="html">&lt;p&gt;Raw link: &lt;a href=&quot;https://www.youtube.com/watch?v=f2mQXNnChwc&quot;&gt;https://www.youtube.com/watch?v=f2mQXNnChwc&lt;/a&gt;&lt;/p&gt;
+         
+         &lt;p&gt;Video overview of the powerful tools Emacs has to search files, create
+a dynamic index of matches, search and replace, use grep and make
+editable grep buffers, match strings or regular expressions, etc.&lt;/p&gt;
+
+&lt;p&gt;The code I showed in the video:&lt;/p&gt;
+
+&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;;; Display a counter showing the number of the current and the other&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; matches.  Place it before the prompt, though it can be after it.&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;isearch-lazy-count&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;lazy-count-prefix-format&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;(%s/%s) &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;lazy-count-suffix-format&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Make regular Isearch interpret the empty space as a regular&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; expression that matches any character between the words you give&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; it.&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;search-whitespace-regexp&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;.*?&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Install the `wgrep' package.  It makes the grep buffers editable.&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Install the `consult' package.  It provides lots of useful commands that&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; enhance the minibuffer experience of Emacs (e.g. for searching&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; lines/heading).&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;;; Install the `embark' package.  It allows you to perform context-sensitive&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;;; actions, using a prompt and then a key/action selection interface.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content>
+		<author>
+			<name>Protesilaos Stavrou</name>
+			<uri>https://protesilaos.com/codelog</uri>
+		</author>
+		<source>
+			<title type="html">Protesilaos Stavrou: Coding blog</title>
+			<subtitle type="html">Coding blog</subtitle>
+			<link rel="self" href="https://protesilaos.com/codelog.xml"/>
+			<id>https://protesilaos.com/codelog</id>
+		</source>
+	</entry>
+
+	<entry>
+		<title type="html" xml:lang="en">Jiacai Liu: How to troubleshoot why tramp hang your Emacs</title>
+		<link href="https://en.liujiacai.net/2023/06/10/troubleshoot-tramp-hang/"/>
+		<id>https://en.liujiacai.net/2023/06/10/troubleshoot-tramp-hang/</id>
+		<updated>2023-06-10T00:00:00+00:00</updated>
+		<published></published>
+		<content type="html">When I was playing with my Emacs configs today, a tramp related message suddenly appeared in minibuffer:
+Tramp: Opening connection nil for dev using ssh... My Emacs also hang at the same moment since the dev host is out of reach. I haven’t used tramp for sometime, so when I first saw this message, I was curious about which function trigger tramp.
+I have some experience in troubleshooting tramp hang issue before, and I know that some seemingly unrelated functions will access the opened tramp buffer, such as: file-truename, but I have no opened tramp buffer at this time, so why tramp got triggered?</content>
+		<author>
+			<name>Jiacai Liu</name>
+			<uri>https://en.liujiacai.net/</uri>
+		</author>
+		<source>
+			<title type="html">KeepCoding</title>
+			<subtitle type="html">Recent content on KeepCoding</subtitle>
+			<link rel="self" href="https://en.liujiacai.net/index.xml"/>
+			<id>https://en.liujiacai.net/</id>
+		</source>
+	</entry>
+
+	<entry>
+		<title type="html">Kisaragi Hiu: Setting up the back button in Framework7 Svelte on Capacitor on Android</title>
+		<link href="https://kisaragi-hiu.com/framework7-svelte-capacitor-android-back-button/"/>
+		<id>https://kisaragi-hiu.com/framework7-svelte-capacitor-android-back-button/</id>
+		<updated>2023-06-09T20:17:40+00:00</updated>
+		<published></published>
+		<content type="html">The back button is not hooked up by default in Framework7, even if you choose the Capacitor template.
+(This is for framework7-svelte. Your mileage may vary, as I haven't checked.)
+To hook it up, we need to (a) go back in history (b) when the back button is pressed.
+(a) Dynamically go back in history framework7-svelte exports an f7ready function, which calls its callback after the Framework7 app instance is ready — the app instance is passed in as the only argument.</content>
+		<author>
+			<name>Kisaragi Hiu</name>
+			<uri>https://kisaragi-hiu.com/</uri>
+		</author>
+		<source>
+			<title type="html">Home on Kisaragi Hiu</title>
+			<subtitle type="html">Recent content on https://kisaragi-hiu.com</subtitle>
+			<link rel="self" href="https://kisaragi-hiu.com/index.xml"/>
+			<id>https://kisaragi-hiu.com/</id>
+		</source>
+	</entry>
+
+	<entry>
+		<title type="html" xml:lang="en-US">Thomas Fitzsimmons: ulisp-repl</title>
+		<link href="https://www.fitzsim.org/blog/?p=681"/>
+		<id>https://www.fitzsim.org/blog/?p=681</id>
+		<updated>2023-06-09T16:06:44+00:00</updated>
+		<published></published>
+		<content type="html" xml:lang="en-US">&lt;p&gt;&lt;em&gt;Read-Evaluate-Print Loops are great for doing quick experiments.  I recently released two new REPL packages for Emacs to GNU ELPA.  This is the second in a two part series.  &lt;a href=&quot;https://www.fitzsim.org/blog/?p=669&quot;&gt;Here is part 1.&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;For microcontroller projects, &lt;a href=&quot;http://ulisp.com/&quot;&gt;uLisp&lt;/a&gt; is a great option.  It provides a Lisp REPL on top of the Arduino libraries.  It implements a &lt;a href=&quot;http://www.ulisp.com/show?3L&quot;&gt;subset of Common Lisp&lt;/a&gt; and adds microprocessor-specific functions.&lt;/p&gt;
+&lt;p&gt;I previously built  and &lt;a href=&quot;https://www.fitzsim.org/blog/?p=365&quot;&gt;blogged about&lt;/a&gt; a handheld computer designed by uLisp’s creator.  I also &lt;a href=&quot;https://www.fitzsim.org/blog/?p=460&quot;&gt;ported uLisp to the SMART Response XE&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;uLisp is controlled by a serial port.  People on the &lt;a href=&quot;http://forum.ulisp.com/&quot;&gt;uLisp forum&lt;/a&gt; have posted various ways to do this, including some Emacs methods.  They required external software though, and I wanted something that would run in Emacs with no external dependencies.  Emacs has &lt;code&gt;make-serial-process&lt;/code&gt; and &lt;code&gt;serial-term&lt;/code&gt; built-in, so I wondered if I could make a REPL using those.  The result is &lt;code&gt;&lt;a href=&quot;https://elpa.gnu.org/packages/ulisp-repl.html&quot;&gt;ulisp-repl&lt;/a&gt;&lt;/code&gt; which I published to GNU ELPA.  Here is an asciinema screencast of installing and using it.  You can pause the video and copy text out of it to try in your Emacs session.&lt;/p&gt;
+&lt;div id=&quot;ulisp-repl-screencast-1&quot;&gt;&lt;em&gt;This inline player uses only free and open source JavaScript.  Or you can download &lt;code&gt;&lt;a href=&quot;https://www.fitzsim.org/screenshots/ulisp-repl-1.cast&quot;&gt;ulisp-repl-1.cast&lt;/a&gt;&lt;/code&gt; and play it with the &lt;code&gt;&lt;a href=&quot;https://asciinema.org/&quot;&gt;asciinema&lt;/a&gt;&lt;/code&gt; command line player.&lt;/em&gt;&lt;/div&gt;
+&lt;p&gt;It has syntax highlighting on the current line.  It might be cool to also implement a SLIME server in Emacs itself (and have SLIME connect to the current Emacs process instead of an external one) but uLisp programs are usually small, so it’s easy enough to copy-n-paste Lisp snippets into the REPL.&lt;/p&gt;</content>
+		<author>
+			<name>Thomas Fitzsimmons</name>
+			<uri>https://www.fitzsim.org/blog</uri>
+		</author>
+		<source>
+			<title type="html">Emacs – fitzsim's development log</title>
+			<link rel="self" href="https://www.fitzsim.org/blog/?feed=rss2&amp;cat=3"/>
+			<id>https://www.fitzsim.org/blog</id>
+		</source>
+	</entry>
+
+	<entry>
+		<title type="html">Protesilaos Stavrou: Emacs: cursory version 1.0.0</title>
+		<link href="https://protesilaos.com/codelog/2023-06-09-cursory-1-0-0/"/>
+		<id>https://protesilaos.com/codelog/2023-06-09-cursory-1-0-0/</id>
+		<updated>2023-06-09T00:00:00+00:00</updated>
+		<published></published>
+		<content type="html">&lt;p&gt;Cursory provides a thin wrapper around built-in variables that affect
+the style of the Emacs cursor on graphical terminals.  The intent is
+to allow the user to define preset configurations such as “block with
+slow blinking” or “bar with fast blinking” and set them on demand.
+The use-case for such presets is to adapt to evolving interface
+requirements and concomitant levels of expected comfort, such as in
+the difference between writing and reading.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Package name (GNU ELPA): &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cursory&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Official manual: &lt;a href=&quot;https://protesilaos.com/emacs/cursory&quot;&gt;https://protesilaos.com/emacs/cursory&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Change log: &lt;a href=&quot;https://protesilaos.com/emacs/cursory-changelog&quot;&gt;https://protesilaos.com/emacs/cursory-changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Git repo on SourceHut: &lt;a href=&quot;https://git.sr.ht/~protesilaos/cursory&quot;&gt;https://git.sr.ht/~protesilaos/cursory&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Mirrors:
+        &lt;ul&gt;
+          &lt;li&gt;GitHub: &lt;a href=&quot;https://github.com/protesilaos/cursory&quot;&gt;https://github.com/protesilaos/cursory&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;GitLab: &lt;a href=&quot;https://gitlab.com/protesilaos/cursory&quot;&gt;https://gitlab.com/protesilaos/cursory&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Mailing list: &lt;a href=&quot;https://lists.sr.ht/~protesilaos/cursory&quot;&gt;https://lists.sr.ht/~protesilaos/cursory&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Backronym: Cursor Usability Requires Styles Objectively Rated Yearlong&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Below are the release notes.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Cursory has been in a stable state for a long time.  I use it daily
+and am happy with what it does.  This version refactors parts of the
+code in the interest of legibility/hackability, while providing a
+quality-of-life feature for users.&lt;/p&gt;
+
+&lt;h2&gt;A preset can now inherit from another&lt;/h2&gt;
+
+&lt;p&gt;In the interest of defining multiple presets while avoiding
+duplication, the user option &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cursory-presets&lt;/code&gt; now accepts an
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:inherit&lt;/code&gt; property.  For example:&lt;/p&gt;
+
+&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;setq&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;cursory-presets&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;;; Sample code here ...&lt;/span&gt;
+
+        &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;bar&lt;/span&gt;
+         &lt;span class=&quot;ss&quot;&gt;:cursor-type&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;bar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+         &lt;span class=&quot;ss&quot;&gt;:cursor-in-non-selected-windows&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;hollow&lt;/span&gt;
+         &lt;span class=&quot;ss&quot;&gt;:blink-cursor-mode&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+         &lt;span class=&quot;ss&quot;&gt;:blink-cursor-blinks&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
+         &lt;span class=&quot;ss&quot;&gt;:blink-cursor-interval&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;
+         &lt;span class=&quot;ss&quot;&gt;:blink-cursor-delay&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;bar-no-other-window&lt;/span&gt;
+         &lt;span class=&quot;ss&quot;&gt;:inherit&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;bar&lt;/span&gt;
+         &lt;span class=&quot;ss&quot;&gt;:cursor-in-non-selected-windows&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;c1&quot;&gt;;; More sample code here ...&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Presets were already capable of getting properties from a default &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;t&lt;/code&gt;
+preset.  Now they can be controlled with greater precision.&lt;/p&gt;
+
+&lt;p&gt;The value of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cursory-presets&lt;/code&gt; is updated accordingly to benefit from
+this mechanism and to showcase how it is done:&lt;/p&gt;
+
+&lt;div class=&quot;language-elisp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;defcustom&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;cursory-presets&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;box&lt;/span&gt;
+     &lt;span class=&quot;ss&quot;&gt;:blink-cursor-interval&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;box-no-blink&lt;/span&gt;
+     &lt;span class=&quot;ss&quot;&gt;:blink-cursor-mode&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;-1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;bar&lt;/span&gt;
+     &lt;span class=&quot;ss&quot;&gt;:cursor-type&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;bar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+     &lt;span class=&quot;ss&quot;&gt;:blink-cursor-interval&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;bar-no-other-window&lt;/span&gt;
+     &lt;span class=&quot;ss&quot;&gt;:inherit&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;bar&lt;/span&gt;
+     &lt;span class=&quot;ss&quot;&gt;:cursor-in-non-selected-windows&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;underscore&lt;/span&gt;
+     &lt;span class=&quot;ss&quot;&gt;:cursor-type&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;hbar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+     &lt;span class=&quot;ss&quot;&gt;:blink-cursor-blinks&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;underscore-thin-other-window&lt;/span&gt;
+     &lt;span class=&quot;ss&quot;&gt;:inherit&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;underscore&lt;/span&gt;
+     &lt;span class=&quot;ss&quot;&gt;:cursor-in-non-selected-windows&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;hbar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;; the default values&lt;/span&gt;
+     &lt;span class=&quot;ss&quot;&gt;:cursor-type&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;box&lt;/span&gt;
+     &lt;span class=&quot;ss&quot;&gt;:cursor-in-non-selected-windows&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;hollow&lt;/span&gt;
+     &lt;span class=&quot;ss&quot;&gt;:blink-cursor-mode&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+     &lt;span class=&quot;ss&quot;&gt;:blink-cursor-blinks&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
+     &lt;span class=&quot;ss&quot;&gt;:blink-cursor-interval&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.2&lt;/span&gt;
+     &lt;span class=&quot;ss&quot;&gt;:blink-cursor-delay&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;;; Omitting the doc string for demo purposes...&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;In the above sample, we notice both the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:inherit&lt;/code&gt; property and the
+default &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;t&lt;/code&gt; preset with all its properties.  Presets beside &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;t&lt;/code&gt; act as
+overrides of the defaults and, as such, need only consist of the
+properties that change from the default.  In the case of an
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:inherit&lt;/code&gt;, properties are first taken from the inherited preset and
+then the default one.&lt;/p&gt;</content>
+		<author>
+			<name>Protesilaos Stavrou</name>
+			<uri>https://protesilaos.com/codelog</uri>
+		</author>
+		<source>
+			<title type="html">Protesilaos Stavrou: Coding blog</title>
+			<subtitle type="html">Coding blog</subtitle>
+			<link rel="self" href="https://protesilaos.com/codelog.xml"/>
+			<id>https://protesilaos.com/codelog</id>
+		</source>
+	</entry>
+
+	<entry>
+		<title type="html" xml:lang="en-US">Irreal: SICP and Emacs</title>
+		<link href="https://irreal.org/blog/?p=11412"/>
+		<id>https://irreal.org/blog/?p=11412</id>
+		<updated>2023-06-08T16:58:33+00:00</updated>
+		<published></published>
+		<content type="html" xml:lang="en-US">&lt;p&gt;As you all know by now, I really love &lt;a href=&quot;https://www.amazon.com/Structure-Interpretation-Computer-Programs-Engineering/dp/0262510871&quot;&gt;SICP&lt;/a&gt; and consider it among the best—if not &lt;i&gt;the&lt;/i&gt; best—books on computer science of all time. I didn’t read it until fairly late in my career and yet I can’t overstate how much I learned from it and how much it changed the way I think about our craft. There are those—including Abelson and Sussman—who say that &lt;a href=&quot;https://irreal.org/blog/?p=11127&quot;&gt;the approach employed by SICP is no longer applicable&lt;/a&gt; but I disagree vehemently. If you don’t understand its lessons then you don’t understand computer programming no matter how many robots you program.&lt;/p&gt;
+&lt;p&gt;You won’t really understand those lessons unless you work most of the problems. I mostly skipped over them on my first reading but later went back to reread SICP and work the problems. Again, I learned new things and deepened my understanding of what I thought I already knew.&lt;/p&gt;
+&lt;p&gt;Getting, finally, to the point, Konstantinos Chousos has just started reading SICP and is working the exercises as he goes along. He has a blog post that describes &lt;a href=&quot;https://kchousos.github.io/posts/sicp-in-emacs/&quot;&gt;his workflow for studying the book&lt;/a&gt;. His is by no means to only such workflow possible but it’s a good one and worth emulating if you, too, want to become enlightened by SICP.&lt;/p&gt;
+&lt;p&gt;The TL;DR is that he installed SICP as an Info file so he can read it in Emacs and then installed &lt;a href=&quot;https://racket-lang.org/&quot;&gt;Racket&lt;/a&gt; as his Scheme environment because it offers an SICP extension that recreates the original MIT Scheme that SICP uses. He also installed the &lt;code&gt;emacs-ob-racket&lt;/code&gt; package for working with Racket from within Emacs.&lt;/p&gt;
+&lt;p&gt;He describes in detail how to install all these so it’s pretty easy to duplicate his setup. If you want to study SICP, and you should, Chousos’ workflow is an excellent way of doing so. And, you’ll end up with SICP installed in Emacs as an Info file. What’s not to like?&lt;/p&gt;</content>
+		<author>
+			<name>jcs</name>
+			<uri>https://irreal.org/blog</uri>
+		</author>
+		<source>
+			<title type="html">Emacs – Irreal</title>
+			<subtitle type="html">The minds had long ago come up with a proper name for it; they called it the Irreal, but they thought of it as Infinite Fun. That was what they really knew it as. The Land of Infinite Fun. --Iain M. Banks, Excession</subtitle>
+			<link rel="self" href="http://irreal.org/blog/?tag=emacs&amp;feed=rss2"/>
+			<id>https://irreal.org/blog</id>
+		</source>
+	</entry>
+
+	<entry>
+		<title type="html" xml:lang="en">James Dyer: Magit Status To Show Tracked Files</title>
+		<link href="https://www.emacs.dyerdwelling.family/emacs/20230604121310-emacs--magit-insert-tracked-files/"/>
+		<id>https://www.emacs.dyerdwelling.family/emacs/20230604121310-emacs--magit-insert-tracked-files/</id>
+		<updated>2023-06-08T10:05:00+00:00</updated>
+		<published></published>
+		<content type="html">&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-sm-12 col-md-12 col-lg-6 col-xl-6 pb-6&quot;&gt;
+    &lt;p&gt;While currently piecing together my git repositories and figuring out which files to commit I am invariably going to have some &lt;strong&gt;Untracked files&lt;/strong&gt; but I also would like to see the &lt;strong&gt;Tracked files&lt;/strong&gt; in &lt;code&gt;magit-status&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Well emacs being emacs this can be easily achieved, I added the following to my &lt;code&gt;use-package magit&lt;/code&gt; declaration.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-elisp&quot;&gt;&lt;span style=&quot;display: flex;&quot;&gt;&lt;span&gt;:config
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;display: flex;&quot;&gt;&lt;span&gt;(magit-add-section-hook
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;display: flex;&quot;&gt;&lt;span&gt;  &lt;span style=&quot;color: #e6db74;&quot;&gt;'magit-status-sections-hook&lt;/span&gt; &lt;span style=&quot;color: #e6db74;&quot;&gt;'magit-insert-tracked-files&lt;/span&gt; &lt;span style=&quot;color: #66d9ef;&quot;&gt;nil&lt;/span&gt; &lt;span style=&quot;color: #e6db74;&quot;&gt;'append&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;figure&gt;&lt;img src=&quot;https://www.emacs.dyerdwelling.family/ox-hugo/20230604121310-emacs--Magit-Insert-Tracked-Files.jpg&quot; width=&quot;100%&quot; /&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+  &lt;div class=&quot;col-sm-12 col-md-12 col-lg-6 col-xl-6 pb-6&quot;&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</content>
+		<author>
+			<name>James Dyer</name>
+			<uri>https://www.emacs.dyerdwelling.family/tags/emacs/</uri>
+		</author>
+		<source>
+			<title type="html">emacs on the DyerDwelling / emacs</title>
+			<subtitle type="html">Recent content in emacs on the DyerDwelling / emacs</subtitle>
+			<link rel="self" href="https://www.emacs.dyerdwelling.family/tags/emacs/index.xml"/>
+			<id>https://www.emacs.dyerdwelling.family/tags/emacs/</id>
+			<rights type="html">© 2023 James Dyer all rights reserved</rights>
+		</source>
+	</entry>
+
+	<entry>
+		<title type="html">Protesilaos Stavrou: Emacs: ef-themes version 1.1.0</title>
+		<link href="https://protesilaos.com/codelog/2023-06-08-ef-themes-1-1-0/"/>
+		<id>https://protesilaos.com/codelog/2023-06-08-ef-themes-1-1-0/</id>
+		<updated>2023-06-08T00:00:00+00:00</updated>
+		<published></published>
+		<content type="html">&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ef-themes&lt;/code&gt; is a collection of light and dark themes for GNU Emacs
+whose goal is to provide colourful (“pretty”) yet legible options for
+users who want something with a bit more flair than the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;modus-themes&lt;/code&gt;
+(also designed by me).&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Package name (GNU ELPA): &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ef-themes&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Official manual: &lt;a href=&quot;https://protesilaos.com/emacs/ef-themes&quot;&gt;https://protesilaos.com/emacs/ef-themes&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Change log: &lt;a href=&quot;https://protesilaos.com/emacs/ef-themes-changelog&quot;&gt;https://protesilaos.com/emacs/ef-themes-changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Sample pictures: &lt;a href=&quot;https://protesilaos.com/emacs/ef-themes-pictures&quot;&gt;https://protesilaos.com/emacs/ef-themes-pictures&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Git repo on SourceHut: &lt;a href=&quot;https://git.sr.ht/~protesilaos/ef-themes&quot;&gt;https://git.sr.ht/~protesilaos/ef-themes&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Mirrors:
+        &lt;ul&gt;
+          &lt;li&gt;GitHub: &lt;a href=&quot;https://github.com/protesilaos/ef-themes&quot;&gt;https://github.com/protesilaos/ef-themes&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;GitLab: &lt;a href=&quot;https://gitlab.com/protesilaos/ef-themes&quot;&gt;https://gitlab.com/protesilaos/ef-themes&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Mailing list: &lt;a href=&quot;https://lists.sr.ht/~protesilaos/ef-themes&quot;&gt;https://lists.sr.ht/~protesilaos/ef-themes&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Backronym: Eclectic Fashion in Themes Hides Exaggerated Markings,
+Embellishments, and Sparkles.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Below are the release notes.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;This release introduces several minor refinements to the project,
+while adding support for more third-party packages or built-in face
+groups.&lt;/p&gt;
+
+&lt;h2&gt;Tabs have their own semantic colour mappings&lt;/h2&gt;
+
+&lt;p&gt;The Ef themes are designed to abstract away common patterns based on
+the semantics of the elements involved.  For example, all strings in
+programming modes use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;string&lt;/code&gt; colour that each theme defines in
+its palette.  This allows the themes to share the same code base yet
+remain distinct from each other.&lt;/p&gt;
+
+&lt;p&gt;Colours used for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tab-bar-mode&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tab-line-mode&lt;/code&gt;, and related are now
+part of this design.  The new semantic mappings are &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bg-tab-bar&lt;/code&gt;,
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bg-tab-current&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bg-tab-other&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;[ A theme palette can have user-defined overrides (e.g. tweak the
+  main background).  Consult the manual for the technicalities or
+  contact me if there is any doubt. ]&lt;/p&gt;
+
+&lt;h2&gt;Added support for the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;centaur-tabs&lt;/code&gt; package&lt;/h2&gt;
+
+&lt;p&gt;The aforementioned semantic colours are applied to the faces of the
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;centaur-tabs&lt;/code&gt;.  Using it with the themes now works as expected,
+instead of defaulting to its own dark background colour (a default
+that doesn’t work with most themes, anyway).&lt;/p&gt;
+
+&lt;p&gt;Thanks to Amo DelBello for bringing this matter to my attention in
+issue 21 on the GitHub mirror: &lt;a href=&quot;https://github.com/protesilaos/ef-themes/issues/21&quot;&gt;https://github.com/protesilaos/ef-themes/issues/21&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Covered the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nerd-icons&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nerd-icons-dired&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nerd-icons-ibuffer&lt;/code&gt; packages&lt;/h2&gt;
+
+&lt;p&gt;These are a new family of packages that are gaining traction in the
+Emacs milieu (for instance, the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;doom-modeline&lt;/code&gt; now uses the Nerd
+icons, which must be installed with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;M-x nerd-icons-install-fonts&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;Their colours are now consistent with all the Ef themes.&lt;/p&gt;
+
+&lt;h2&gt;Tweaked the colouration of the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;all-the-icons&lt;/code&gt; glyphs&lt;/h2&gt;
+
+&lt;p&gt;I refined some of the colours in use to introduce greater variety and
+amplify certain values while avoiding exaggerations.  In short, they
+should look nice and pretty.&lt;/p&gt;
+
+&lt;h2&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;whitespace-mode&lt;/code&gt; indicators are much more subtle&lt;/h2&gt;
+
+&lt;p&gt;The previous style involved the use of a dim grey background.  While
+this is good to spot invisible characters quickly, it is bad for users
+who want to run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;whitespace-mode&lt;/code&gt; at all times (e.g. for Python which
+is space-sensitive).&lt;/p&gt;
+
+&lt;p&gt;We thus remove the backgrounds by default but provide the option to
+reinstate them via palette overrides (as documented at length in the
+manual).  To this end, we have new semantic colour mappings for
+ordinary negative space and its invisible characters:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bg-space&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fg-space&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bg-space-err&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Ediff faces no longer have an implicit dependency on diff-mode&lt;/h2&gt;
+
+&lt;p&gt;I made a mistake where the Ediff faces would inherit the styles of
+their &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;diff-mode&lt;/code&gt; counterparts.  This usually works, such as when
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ediff&lt;/code&gt; is invoked from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;magit&lt;/code&gt;, though it will not do the right thing
+if the user invokes some Ediff command directly without first loading
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;diff-mode&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;This no longer happens.  Ediff always works.  Stylistically,
+everything looks the same.&lt;/p&gt;
+
+&lt;h2&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git-gutter&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git-gutter-fr&lt;/code&gt; packages are supported&lt;/h2&gt;
+
+&lt;p&gt;These now use the appropriate colours defined by the Ef themes.  This
+is especially important for themese that do not use the generic
+red-green colour coding scheme.&lt;/p&gt;
+
+&lt;h2&gt;image-dired marked items are easier to spot&lt;/h2&gt;
+
+&lt;p&gt;With &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;image-dired&lt;/code&gt; the user can apply selection or deletion marks to
+image thumbnails.  Those marks are colour-coded the same way they are
+in Dired (the exact hues depend on the theme to account for
+accessibility, e.g. for deuteranopia or tritanopia).  Sometimes the
+colour of the mark is obscured by the same colour found in the
+thumbnail.  To make the mark stand out, a border is drawn around it,
+making the selection unambiguous.&lt;/p&gt;
+
+&lt;h2&gt;Holidays and diary entries are more distinct and have no background&lt;/h2&gt;
+
+&lt;p&gt;The holidays and diary entries that are found in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;M-x calendar&lt;/code&gt; or
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;M-x diary&lt;/code&gt; buffers no longer use a subtle background colour.  The old
+design was not consistent with similar patterns established by the
+themes, such as how a date/timestamp should be represented.&lt;/p&gt;
+
+&lt;p&gt;Furthermore, the given constructs are assigned to contrasting hues to
+stand apart from each other and also be easy spot in their context
+(especially holidays in the Calendar view).&lt;/p&gt;
+
+&lt;h2&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mood-line&lt;/code&gt; is covered by the themes&lt;/h2&gt;
+
+&lt;p&gt;This is a package that refashions the Emacs mode line.  It is
+conceptually similar to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;doom-modeline&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Miscellaneous&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Added links in the Custom User Interface to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ef-themes&lt;/code&gt; web
+pages for the manual and sample pictures, respectively.  Those links
+are visible when perusing the various &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;M-x customize&lt;/code&gt; buffers where
+entries related to the Ef themes are present.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Made &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ef-themes--load-theme&lt;/code&gt; return the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;THEME&lt;/code&gt; argument it operates
+on.  The intent is to allow other functions that call this one to
+capture the return value for their purposes.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Extended support for the built-in ERT faces, which are used in
+regression tests of Emacs Lisp code.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content>
+		<author>
+			<name>Protesilaos Stavrou</name>
+			<uri>https://protesilaos.com/codelog</uri>
+		</author>
+		<source>
+			<title type="html">Protesilaos Stavrou: Coding blog</title>
+			<subtitle type="html">Coding blog</subtitle>
+			<link rel="self" href="https://protesilaos.com/codelog.xml"/>
+			<id>https://protesilaos.com/codelog</id>
+		</source>
+	</entry>
+
+	<entry>
+		<title type="html">Andrea: A little exploration of Go from a Clojure perspective</title>
+		<link href="http://ag91.github.io/blog/2023/06/08/a-little-exploration-of-go-from-a-clojure-perspective"/>
+		<id>http://ag91.github.io/blog/2023/06/08/a-little-exploration-of-go-from-a-clojure-perspective</id>
+		<updated>2023-06-08T00:00:00+00:00</updated>
+		<published></published>
+		<content type="html">&lt;div&gt;
+&lt;div class=&quot;post&quot;&gt;
+&lt;h1&gt;A little exploration of Go from a Clojure perspective&lt;/h1&gt;
+&lt;p&gt;
+I have been looking into Go recently and I decided to find out how to
+do things that I usually do in Clojure. These are (a cleaned up
+version of) my notes.
+&lt;/p&gt;
+
+&lt;p&gt;
+First let's start from iterations. Clojure (as any good Lisp language)
+focuses on sequences. So changing a sequence into a new one is key (and super easy):
+&lt;/p&gt;
+
+&lt;div class=&quot;org-src-container&quot;&gt;
+&lt;pre class=&quot;src src-clojure&quot;&gt;(map inc [1 2 3])
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+(2 3 4)
+&lt;/p&gt;
+
+&lt;p&gt;
+While Clojure focuses on immutability to keep things simple, Go focuses on performance.
+The easiest way to achieve the same is with a &lt;code&gt;for&lt;/code&gt; loop:
+&lt;/p&gt;
+
+&lt;div class=&quot;org-src-container&quot;&gt;
+&lt;pre class=&quot;src src-gore&quot;&gt;list := []int{1,2,3}
+for i, value := range list {
+        list[i] = value + 1
+}
+list
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;pre class=&quot;example&quot; id=&quot;orgee331e6&quot;&gt;[]int{
+  1,
+  2,
+  3,
+
+..... 
+ []int{
+  2,
+  3,
+  4,
+&lt;/pre&gt;
+
+&lt;p&gt;
+Next Clojure focuses on data transformation and the most used data
+structure is the map. So let's iterate over a map's values:
+&lt;/p&gt;
+
+&lt;div class=&quot;org-src-container&quot;&gt;
+&lt;pre class=&quot;src src-clojure&quot;&gt;(into {} (for [[k v] {:a 1 :b 2}] [k (inc v)])) 
+; (update-vals {:a 1 :b 2} inc) ; clojure 1.11
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+{:a 2, :b 3}
+&lt;/p&gt;
+
+&lt;p&gt;
+In the above we use a Clojure &lt;code&gt;for&lt;/code&gt; loop to create a new vector of
+key-value pairs, where they value in the pair was increased by one.
+&lt;/p&gt;
+
+&lt;p&gt;
+Go also comes with a map data structure which is super easy to write.
+Again the &lt;code&gt;for&lt;/code&gt; loop will let us modify things:
+&lt;/p&gt;
+
+&lt;div class=&quot;org-src-container&quot;&gt;
+&lt;pre class=&quot;src src-gore&quot;&gt;theMap := map[string]int{&quot;a&quot;: 1, &quot;b&quot;: 2}
+for key, value := range theMap {
+        theMap[key] = value + 1
+}
+theMap
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;pre class=&quot;example&quot;&gt;map[string]int{
+  &quot;a&quot;: 1,
+  &quot;b&quot;: 2,
+
+..... 
+ map[string]int{
+  &quot;a&quot;: 2,
+  &quot;b&quot;: 3,
+&lt;/pre&gt;
+
+
+
+&lt;p&gt;
+And to complete our little exploration, I would say polymorphism is a
+must. In Clojure we can make interfaces via protocols:
+&lt;/p&gt;
+
+&lt;div class=&quot;org-src-container&quot;&gt;
+&lt;pre class=&quot;src src-clojure&quot;&gt;(defprotocol StringMyself
+  (who-am-i [x]))
+
+(deftype Duck []
+  StringMyself
+  (who-am-i [x] &quot;I am a duck!&quot;))
+
+(deftype Octopus []
+  StringMyself
+  (who-am-i [x] &quot;I am an octopus!&quot;))
+
+(who-am-i (Octopus.))
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;table border=&quot;2&quot; cellpadding=&quot;6&quot; cellspacing=&quot;0&quot; frame=&quot;hsides&quot; rules=&quot;groups&quot;&gt;
+
+
+&lt;colgroup&gt;
+&lt;col class=&quot;org-left&quot; /&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class=&quot;org-left&quot;&gt;StringMyself&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;org-left&quot;&gt;user.Duck&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;org-left&quot;&gt;user.Octopus&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td class=&quot;org-left&quot;&gt;&quot;I am an octopus!&quot;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;
+In Go is beautifully simple as well:
+&lt;/p&gt;
+
+&lt;div class=&quot;org-src-container&quot;&gt;
+&lt;pre class=&quot;src src-gore&quot;&gt;type StringMyself interface {
+        WhoAmI() string
+}
+
+type Duck struct {}
+func (d Duck) WhoAmI () string {
+        return &quot;I am a duck!&quot;
+}
+type Octopus struct {}
+func (d Octopus) WhoAmI () string {
+        return &quot;I am an octopus!&quot;
+}
+
+var o StringMyself = Octopus{}
+o.WhoAmI()
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;pre class=&quot;example&quot;&gt;..... 
+  main.Octopus{
+ \&quot;I am an octopus!\&quot;&quot;
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+Not bad as a first go at go. And it seems to be pretty succinct!
+&lt;/p&gt;
+
+&lt;p&gt;
+Happy Going!
+&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;</content>
+		<author>
+			<name>Andrea</name>
+			<uri>http://ag91.github.io</uri>
+		</author>
+		<source>
+			<title type="html">Where parallels cross</title>
+			<subtitle type="html">Interesting bits of life</subtitle>
+			<link rel="self" href="https://ag91.github.io/rss.xml"/>
+			<id>http://ag91.github.io</id>
+		</source>
+	</entry>
+
+	<entry>
+		<title type="html">Discovering Emacs podcast: Essential Movement and Editing Shortcuts in Emacs - EP5</title>
+		<link href="https://www.youtube.com/watch?v=nG3EMqOAWDg"/>
+		<id>yt:video:nG3EMqOAWDg</id>
+		<updated>2023-06-07T20:28:08+00:00</updated>
+		<published>2023-03-23T08:31:05+00:00</published>
+		<content type="html"></content>
+		<author>
+			<name>Discovering Emacs</name>
+			<uri>https://www.youtube.com/channel/UC8gfEh6Z9yLmw5o7fC7D9QA</uri>
+		</author>
+		<source>
+			<title type="html">Discovering Emacs</title>
+			<link rel="self" href="http://www.youtube.com/feeds/videos.xml?channel_id=UC8gfEh6Z9yLmw5o7fC7D9QA"/>
+			<id>yt:channel:</id>
+		</source>
+	</entry>
+
+	<entry>
+		<title type="html" xml:lang="en-US">Irreal: The Real Emacs Advantage</title>
+		<link href="https://irreal.org/blog/?p=11410"/>
+		<id>https://irreal.org/blog/?p=11410</id>
+		<updated>2023-06-07T17:05:33+00:00</updated>
+		<published></published>
+		<content type="html" xml:lang="en-US">&lt;p&gt;After &lt;a href=&quot;https://irreal.org/blog/?p=11408&quot;&gt;yesterday’s post&lt;/a&gt; I started thinking about what the real advantage of Emacs is. There are, as I’ve said many times, plenty of advantages but if you had to choose the most important one, what would it be?&lt;/p&gt;
+&lt;p&gt;My recent experience with &lt;a href=&quot;https://github.com/fritzgrabo/elfeed-webkit&quot;&gt;elfeed-webkit&lt;/a&gt; crystallized this for me. It started with Christopher Wellons feeling that he needed a better RSS reader and that he’d like it to run in Emacs. The result of that itch was what I consider the &lt;i&gt;best&lt;/i&gt; RSS reader in any environment: &lt;a href=&quot;https://github.com/skeeto/elfeed&quot;&gt;elfeed&lt;/a&gt;. The point here is that Wellons is just a guy with a problem but Emacs made it easy for him to solve that problem and make the result available to all of us.&lt;/p&gt;
+&lt;p&gt;But wait. There’s more. Fritz Grabo was an Elfeed user and liked it but many times he had to switch to his browser to read a post and then switch back to Elfeed. That was a pain so he started wondering if there was some way of faithfully rendering the HTML directly in Emacs. It turned out that of course there was. You can compile Emacs with &lt;a href=&quot;https://www.emacswiki.org/emacs/EmacsXWidgets&quot;&gt;XWidget&lt;/a&gt; support and then use Webkit to render HTML accurately directly in an Emacs buffer. Grabo used that to make elfeed-webkit and suddenly reading your RSS feed is even easier and more pleasant than it was before.&lt;/p&gt;
+&lt;p&gt;That’s the thing about Emacs: everything is available for you to extend it in any way you like, sometimes in surprising ways. Reading RSS feeds is, after all, only marginally related to text editing but as I’ve written so many times before, Emacs is much more than an editor so it has us covered.&lt;/p&gt;
+&lt;p&gt;For me, therefore, the most important advantage of Emacs is its extensibility. If it isn’t quite what you want, Emacs makes it possible to make it &lt;i&gt;exactly&lt;/i&gt; what you want.&lt;/p&gt;</content>
+		<author>
+			<name>jcs</name>
+			<uri>https://irreal.org/blog</uri>
+		</author>
+		<source>
+			<title type="html">Emacs – Irreal</title>
+			<subtitle type="html">The minds had long ago come up with a proper name for it; they called it the Irreal, but they thought of it as Infinite Fun. That was what they really knew it as. The Land of Infinite Fun. --Iain M. Banks, Excession</subtitle>
+			<link rel="self" href="http://irreal.org/blog/?tag=emacs&amp;feed=rss2"/>
+			<id>https://irreal.org/blog</id>
+		</source>
+	</entry>
+
+	<entry>
+		<title type="html" xml:lang="en">Unwound Stack: Hosting indie-org.sh on S3</title>
+		<link href="https://www.unwoundstack.com/blog/hosting-indie-org-sh-on-s3.html"/>
+		<id>https://www.unwoundstack.com/blog/hosting-indie-org-sh-on-s3.html</id>
+		<updated>2023-06-07T07:00:00+00:00</updated>
+		<published></published>
+		<content type="html">&lt;p&gt;
+    Bringing your own domain to Route 53 is easy, once you know how
+    &lt;/p&gt;</content>
+		<author>
+			<name>Michael</name>
+			<email>sp1ff@pobox.com</email>
+			<uri>https://www.unwoundstack.com/blog</uri>
+		</author>
+		<source>
+			<title type="html">Sitemap for project rss</title>
+			<subtitle type="html">The stack after unwinding...</subtitle>
+			<link rel="self" href="https://www.unwoundstack.com/blog/rss.xml"/>
+			<id>https://www.unwoundstack.com/blog</id>
+		</source>
+	</entry>
+
+	<entry>
+		<title type="html" xml:lang="en-US">Thomas Fitzsimmons: firefox-javascript-repl</title>
+		<link href="https://www.fitzsim.org/blog/?p=669"/>
+		<id>https://www.fitzsim.org/blog/?p=669</id>
+		<updated>2023-06-07T02:11:05+00:00</updated>
+		<published></published>
+		<content type="html" xml:lang="en-US">&lt;p&gt;&lt;em&gt;Read-Evaluate-Print Loops are great for doing quick experiments.  I recently released two new REPL packages for Emacs to GNU ELPA.  This is the first in a two part series. &lt;a href=&quot;https://www.fitzsim.org/blog/?p=681&quot;&gt;Here is part 2.&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;I wanted something along the lines of SLIME or CIDER’s REPL (just the REPL part) but for JavaScript.  There have been many options for this over the years, MozRepl, skewer-mode, jsSlime &lt;sup id=&quot;sup-1&quot;&gt;&lt;a href=&quot;https://www.fitzsim.org/blog/?feed=rss2&amp;amp;cat=3#footnote-1&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;, and more recently dap-mode.  I tried all of these existing options but all except for dap-mode are no longer maintained.  The Firefox Remote Debugging Protocol has evolved over the past decade, and it has not always maintained backward compatibility.  It is not meant to be an API, I guess, but more a reflection of Firefox internals.&lt;/p&gt;
+&lt;p&gt;I did try dap-mode, but I couldn’t install it on my development version of Emacs; there seemed to be Elisp compatibility problems with some of its many dependencies.  It also seemed to require on the Firefox side a JavaScript extension from the repository for an unrelated proprietary IDE, which I found strange.&lt;/p&gt;
+&lt;p&gt;I just wanted a simple Emacs mode to communicate with Firefox directly, for small JavaScript experimentation.  It seemed like everything was already available in Emacs and Firefox to do that.&lt;br /&gt;
+I started with the &lt;a href=&quot;https://www.masteringemacs.org/article/comint-writing-command-interpreter&quot;&gt;Mastering Emacs Comint guide&lt;/a&gt;, and for the Firefox side, the &lt;a href=&quot;https://github.com/jpramosi/geckordp&quot;&gt;geckordp&lt;/a&gt; project does a great job of documenting the Firefox Remote Debugging Protocol.  Firefox needs to run in a special debug mode for the protocol to be available, so I added that logic to the new Emacs command.&lt;/p&gt;
+&lt;p&gt;The result is &lt;a href=&quot;https://elpa.gnu.org/packages/firefox-javascript-repl.html&quot;&gt;&lt;code&gt;firefox-javascript-repl&lt;/code&gt;&lt;/a&gt;, available in GNU ELPA.  I tested it on GNU/Linux.  I would like this to work on other operating systems too, patches accepted.&lt;/p&gt;
+&lt;p&gt;I made sure this mode works on Emacs versions 26.1 (released in 2018) and newer &lt;sup id=&quot;sup-2&quot;&gt;&lt;a href=&quot;https://www.fitzsim.org/blog/?feed=rss2&amp;amp;cat=3#footnote-2&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;.  I’ve also tested on the most recent Firefox (113.0.2) and Firefox ESR (102.11.0esr).  I’ll strive to keep up with changes in the Firefox Remote Debugging Protocol, to minimally keep &lt;code&gt;firefox-javascript-repl&lt;/code&gt; working for the latest Firefox and Firefox ESR releases (though if the FRDP breaks compatibility, &lt;code&gt;firefox-javascript-repl&lt;/code&gt; will also break compatibility with older browser versions, to avoid a large test matrix).&lt;/p&gt;
+&lt;p&gt;&lt;s&gt;I was going to do a video of this working but it’s easy enough to try yourself.&lt;/s&gt; &lt;strong&gt;*Update 2023-06-09*&lt;/strong&gt; Here is a video of the Emacs side of &lt;code&gt;firefox-javascript-repl&lt;/code&gt;:&lt;/p&gt;
+&lt;div id=&quot;firefox-javascript-repl-screencast-1&quot;&gt;This inline player uses only free and open source JavaScript. Or you can download &lt;code&gt;&lt;a href=&quot;https://www.fitzsim.org/screenshots/firefox-javascript-repl-1.cast&quot;&gt;firefox-javascript-repl-1.cast&lt;/a&gt;&lt;/code&gt; and play it with the &lt;code&gt;&lt;a href=&quot;https://asciinema.org/&quot;&gt;asciinema&lt;/a&gt;&lt;/code&gt; command line player.&lt;/div&gt;
+&lt;p&gt;The Firefox window looks like this:&lt;br /&gt;
+&lt;img alt=&quot;A Firefox window in which the URL bar has a robot icon left of the search magnifying glass, and in which the URL bar background is pink and purple diagonal strips.&quot; src=&quot;https://www.fitzsim.org/screenshots/firefox-javascript-repl-1.png&quot; /&gt;&lt;br /&gt;
+It creates a new temporary Firefox profile, so it doesn’t mess with any of your existing profiles.  Try &lt;code&gt;M-x package-install RET firefox-javascript-repl RET; M-x firefox-javascript-repl RET&lt;/code&gt;.  If Firefox starts and everything succeeds, you should see an interesting JavaScript quirk-of-the-day, courtesy of the &lt;a href=&quot;https://github.com/denysdovhan/wtfjs&quot;&gt;wtfjs project&lt;/a&gt;.&lt;br /&gt;
+&lt;em&gt;Thank you to Andrew Overholt for testing on Fedora, and for experimenting with Macintosh Operating System support (in progress).&lt;/em&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li id=&quot;footnote-1&quot;&gt;I wish &lt;a href=&quot;https://github.com/segv/jss&quot;&gt;jsSlime&lt;/a&gt; were still maintained, in which case I wouldn’t need to write this post or this REPL.&lt;a href=&quot;https://www.fitzsim.org/blog/?feed=rss2&amp;amp;cat=3#sup-1&quot;&gt;^&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&quot;footnote-2&quot;&gt;I welcome patches to make it work on older versions of Emacs, but I can’t build anything older than Emacs 26.1 to test against.&lt;a href=&quot;https://www.fitzsim.org/blog/?feed=rss2&amp;amp;cat=3#sup-2&quot;&gt;^&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content>
+		<author>
+			<name>Thomas Fitzsimmons</name>
+			<uri>https://www.fitzsim.org/blog</uri>
+		</author>
+		<source>
+			<title type="html">Emacs – fitzsim's development log</title>
+			<link rel="self" href="https://www.fitzsim.org/blog/?feed=rss2&amp;cat=3"/>
+			<id>https://www.fitzsim.org/blog</id>
+		</source>
+	</entry>
+
+	<entry>
+		<title type="html" xml:lang="en-US">Irreal: Is Emacs Slow?</title>
+		<link href="https://irreal.org/blog/?p=11408"/>
+		<id>https://irreal.org/blog/?p=11408</id>
+		<updated>2023-06-06T16:21:45+00:00</updated>
+		<published></published>
+		<content type="html" xml:lang="en-US">&lt;p&gt;What do you think? Is Emacs slow or is that just another instance of Emacs hater FUD? The most frequent complaint I see about Emacs—with the possible exception of its lack of bling—is that it’s too slow.&lt;/p&gt;
+&lt;p&gt;I don’t understand that. Maybe that’s because I’m old enough to have used some genuinely slow tools but I’m pretty sure it’s just that I have more sensible standards. Sure, other editors may be faster at one task or another but I have always found the differences in speed essentially undetectable by human beings in their normal workflows. In other words, Emacs is fast enough where it counts.&lt;/p&gt;
+&lt;p&gt;Corwin Brust over at &lt;a href=&quot;https://corwin.bru.st&quot;&gt;Corwin’s Emacs Blog&lt;/a&gt; examines this question in his blog post, &lt;a href=&quot;https://corwin.bru.st/2023-06-04-the-turtle-and-the-snail/&quot;&gt;The Turtle and the Snail&lt;/a&gt;. The title comes from a joke involving a turtle and snail that has application to the question of Emacs’ speed. I’ll let you check out the joke on Brust’s post but the TL;DR is that speed—at least if we aren’t speaking of light—depends on the observer.&lt;/p&gt;
+&lt;p&gt;Brust mentions a related complaint: “[I]t consumes too much of my time, to understand and configure, and to enhance it.” That’s just plain silly. Unless you’re one of those people who demands instant gratification and are unwilling to expend any effort to attain it, the complaint is frivolous. When I started, I printed out the cheat sheet and was using Emacs reasonably productively on the first day. To be sure, I wasn’t as fast as I was with Vim but that came fairly quickly.&lt;/p&gt;
+&lt;p&gt;As for understanding and configuring it, we all know that that’s a lifetime journey. Like every other Emacs user, I’m still learning new things about Emacs and my &lt;code&gt;init.el&lt;/code&gt; is a lifelong project. If this idea of a lifetime commitment bothers you, perhaps Emacs is not for you.&lt;/p&gt;</content>
+		<author>
+			<name>jcs</name>
+			<uri>https://irreal.org/blog</uri>
+		</author>
+		<source>
+			<title type="html">Emacs – Irreal</title>
+			<subtitle type="html">The minds had long ago come up with a proper name for it; they called it the Irreal, but they thought of it as Infinite Fun. That was what they really knew it as. The Land of Infinite Fun. --Iain M. Banks, Excession</subtitle>
+			<link rel="self" href="http://irreal.org/blog/?tag=emacs&amp;feed=rss2"/>
+			<id>https://irreal.org/blog</id>
+		</source>
+	</entry>
+
+	<entry>
+		<title type="html" xml:lang="en-us">Will Schenk: Setting up emacs re-re-dux</title>
+		<link href="https://willschenk.com/howto/2023/setting_up_emacs_reredux/"/>
+		<id>https://willschenk.com/howto/2023/setting_up_emacs_reredux/</id>
+		<updated>2023-06-06T00:00:00+00:00</updated>
+		<published></published>
+		<content type="html">Can we ever stop setting up emacs? I don't think it's possible, no. Lets do it again, with a nice clean setup using Nano Emacs.
+Compiling emacs First lets get ourselves a clean emacs from d12frosted/homebrew-emacs-plus.
+1 2 3 $ brew tap d12frosted/emacs-plus $ brew install emacs-plus --with-imagemagick --with-native-comp --with-modern-sexy-v2-icon --with-xwidgets $ ln -s /opt/homebrew/opt/emacs-plus@28/Emacs.app /Applications This will take a nice little while.
+Also, some fonts:
+1 2 3 4 $ brew tap homebrew/cask-fonts $ brew install font-roboto $ brew install font-roboto-slab $ brew install font-roboto-mono Installing straight.</content>
+		<author>
+			<name>Will Schenk</name>
+			<uri>https://willschenk.com/tags/emacs/</uri>
+		</author>
+		<source>
+			<title type="html">emacs, on Will Schenk</title>
+			<subtitle type="html">Recent content in emacs, on Will Schenk</subtitle>
+			<link rel="self" href="https://willschenk.com/tags/emacs/feed.xml"/>
+			<id>https://willschenk.com/tags/emacs/</id>
+		</source>
+	</entry>
+
+	<entry>
+		<title type="html">Andrea: ob-gore: literate Go run via the Gore REPL</title>
+		<link href="http://ag91.github.io/blog/2023/06/06/ob-gore-literate-go-run-via-the-gore-repl"/>
+		<id>http://ag91.github.io/blog/2023/06/06/ob-gore-literate-go-run-via-the-gore-repl</id>
+		<updated>2023-06-06T00:00:00+00:00</updated>
+		<published></published>
+		<content type="html"></content>
+		<author>
+			<name>Andrea</name>
+			<uri>http://ag91.github.io</uri>
+		</author>
+		<source>
+			<title type="html">Where parallels cross</title>
+			<subtitle type="html">Interesting bits of life</subtitle>
+			<link rel="self" href="https://ag91.github.io/rss.xml"/>
+			<id>http://ag91.github.io</id>
+		</source>
+	</entry>
+
+</feed>

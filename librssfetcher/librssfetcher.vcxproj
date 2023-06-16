@@ -19,14 +19,25 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\AtomFeed.h" />
+    <ClInclude Include="include\AtomFeedEntry.h" />
+    <ClInclude Include="include\Feed.h" />
+    <ClInclude Include="include\FeedCommon.h" />
     <ClInclude Include="include\FeedFetcher.h" />
     <ClInclude Include="include\FeedParser.h" />
     <ClInclude Include="include\FetchUnit.h" />
     <ClInclude Include="include\HttpGetRequest.h" />
+    <ClInclude Include="include\RSSFeed.h" />
+    <ClInclude Include="include\RSSFeedEntry.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\AtomFeed.cpp" />
+    <ClCompile Include="source\AtomFeedEntry.cpp" />
+    <ClCompile Include="source\FeedCommon.cpp" />
     <ClCompile Include="source\FeedFetcher.cpp" />
     <ClCompile Include="source\FetchUnit.cpp" />
+    <ClCompile Include="source\RSSFeed.cpp" />
+    <ClCompile Include="source\RSSFeedEntry.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

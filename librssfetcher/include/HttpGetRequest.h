@@ -38,13 +38,6 @@ protected:
         return result;
     }
 
-    void Disconnect()
-    {
-		WinHttpSetStatusCallback(m_handle, nullptr, 0, 0);
-        Close();
-        m_connection.Close(); // Close connection handle so that it's reusable next time.
-    }
-
 public:
     HttpGetRequest() : m_result{ false }, m_statusCode{ 0 }, m_userParam{ nullptr }{ }
     HttpGetRequest(const HttpGetRequest& rhs) = delete;
@@ -53,12 +46,14 @@ public:
         m_onReadComplete{ rhs.m_onReadComplete }, m_onProcessComplete{ rhs.m_onProcessComplete },
         m_onException{ rhs.m_onException }
     {
+        Close();
         if (rhs.m_handle)
         {
             m_handle = rhs.m_handle;
             rhs.m_handle = nullptr;
         }
 
+        m_connection.Close();
         if (rhs.m_connection.m_handle)
         {
             m_connection.m_handle = rhs.m_connection.m_handle;
@@ -66,7 +61,19 @@ public:
         }
     }
 
-    virtual ~HttpGetRequest() { }
+    virtual ~HttpGetRequest() 
+    {
+        Disconnect();
+    }
+
+    virtual void Disconnect()
+    {
+        if (m_handle)
+            WinHttpSetStatusCallback(m_handle, nullptr, 0, 0);
+
+        Close();
+        m_connection.Close(); // Close connection handle so that it's reusable next time.
+    }
 
     virtual void OnException(const WINHTTP_ASYNC_RESULT* asyncResult)
     {

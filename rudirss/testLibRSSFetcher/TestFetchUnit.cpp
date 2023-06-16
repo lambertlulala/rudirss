@@ -30,8 +30,8 @@ TEST(TestFetchUnit, TestFetchFeed)
     DWORD error = 0;
     try
     {
-        testFetchUnit.Fetch(session, L"https://www.makeuseof.com/feed",
-            [&](bool result, DWORD statusCode, const char* data, size_t size, const WINHTTP_ASYNC_RESULT* asyncResult) {
+        testFetchUnit.Fetch(nullptr, session, L"https://www.makeuseof.com/feed",
+            [&](const void *userParam, bool result, DWORD statusCode, const char* data, size_t size, const WINHTTP_ASYNC_RESULT* asyncResult) {
                 responseStatusCode = statusCode;
                 if (asyncResult)
                     error = asyncResult->dwError;
@@ -64,8 +64,8 @@ TEST(TestFetchUnit, TestFetchFeeds)
     {
         for (const auto &feed: feeds)
         {
-            testFetchUnit.Fetch(session, feed,
-                [&](bool result, DWORD statusCode, const char* data, size_t size, const WINHTTP_ASYNC_RESULT* asyncResult) {
+            testFetchUnit.Fetch(nullptr, session, feed,
+                [&](const void *userParam, bool result, DWORD statusCode, const char* data, size_t size, const WINHTTP_ASYNC_RESULT* asyncResult) {
                     responseStatusCode = statusCode;
                     if (asyncResult)
                         error = asyncResult->dwError;
@@ -91,7 +91,7 @@ TEST(TestFetchUnit, TestFetchWithoutCallback)
     TestFakeFetchUnit testFetchUnit;
     try
     {
-        testFetchUnit.Fetch(session, L"https://www.makeuseof.com/feed", nullptr); 
+        testFetchUnit.Fetch(nullptr, session, L"https://www.makeuseof.com/feed", nullptr); 
         ASSERT_FALSE(true);
     }
     catch (const std::exception& e)
@@ -112,8 +112,8 @@ TEST(TestFetchUnit, TestGetPageWithoutSecurity)
     DWORD error = 0;
     try
     {
-        testFetchUnit.Fetch(session, L"http://www.bing.com",
-            [&](bool result, DWORD statusCode, const char* data, size_t size, const WINHTTP_ASYNC_RESULT* asyncResult) {
+        testFetchUnit.Fetch(nullptr, session, L"http://www.bing.com",
+            [&](const void *userParam, bool result, DWORD statusCode, const char* data, size_t size, const WINHTTP_ASYNC_RESULT* asyncResult) {
                 responseStatusCode = statusCode;
                 if (asyncResult)
                     error = asyncResult->dwError;
